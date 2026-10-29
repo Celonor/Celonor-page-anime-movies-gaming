@@ -1,0 +1,587 @@
+/* ==========================================================================
+   GAMING.CSS — CELONOR
+   ========================================================================== */
+:root {
+  --bg-cream: #f0ede6;
+  --text-dark: #141413;
+  --accent-blue: #c1ccd7;
+  --accent-orange: #d97843;
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Anton', Impact, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Evita el doble scrollbar dejando overflow-x solo en body */
+html {
+  width: 100%;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  width: 100%;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.overflow-mask {
+  overflow: hidden;
+  padding: 6px 0;
+}
+
+/* ==========================================================================
+   BLOQUE 1: HERO / HEADLINE INTRODUCTORIO
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 110px 32px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.hero-circles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-blue {
+  width: 58vw;
+  height: 58vw;
+  background-color: var(--accent-blue);
+  top: -18vw;
+  left: 25vw;
+}
+
+.circle-orange {
+  width: 44vw;
+  height: 44vw;
+  background-color: var(--accent-orange);
+  top: 14vw;
+  right: 7vw;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 12px;
+}
+
+.hero-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 12px;
+}
+
+.hero-title {
+  font-size: clamp(4.5rem, 12.8vw, 14.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+}
+
+.hero-sub-right {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: right;
+  max-width: 240px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.hero-sub-left {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  max-width: 240px;
+  line-height: 1.4;
+  margin-top: 14px;
+}
+
+.hero-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-dark);
+  transform-origin: left center;
+}
+
+.hero-intro-wrap {
+  margin-top: 56px;
+  max-width: 96%;
+}
+
+.hero-paragraph {
+  font-size: clamp(1.6rem, 3.2vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+
+/* ==========================================================================
+   GALERÍA ASIMÉTRICA
+   ========================================================================== */
+.showcase-split {
+  padding: 60px 32px 40px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.showcase-left .showcase-big {
+  width: 88%;
+  aspect-ratio: 1 / 1.05;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.showcase-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  margin-top: 280px;
+}
+
+.showcase-right .showcase-small {
+  width: 55%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+/* ==========================================================================
+   BLOQUE 2: THE ROSTER (TARJETAS EDITORIALES CON HOVER)
+   ========================================================================== */
+.skills-section {
+  padding: 60px 32px 130px;
+}
+
+.skills-header {
+  max-width: 1380px;
+  margin: 0 auto 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.skills-main-title {
+  font-size: clamp(3.8rem, 7.8vw, 8.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.skill-col {
+  border-top: 1.5px solid var(--text-dark);
+  padding: 28px 24px 32px;
+  background-color: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.35s ease, transform 0.35s ease;
+}
+
+.skill-col:hover {
+  background-color: #ffffff;
+  transform: translateY(-4px);
+}
+
+.skill-col-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.skill-num {
+  font-family: 'Antonio', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+.skill-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid rgba(20, 20, 19, 0.25);
+  border-radius: 999px;
+}
+
+.skill-title {
+  font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+
+.skill-desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(20, 20, 19, 0.78);
+  margin-bottom: 32px;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(20, 20, 19, 0.14);
+}
+
+.skill-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.14);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.skill-list li span:last-child {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   RULETA AUTOMÁTICA DE 9 IMÁGENES
+   ========================================================================== */
+.roulette-section {
+  padding-top: 20px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.roulette-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.roulette-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  will-change: transform;
+}
+
+.roulette-item {
+  width: 24vw;
+  min-width: 280px;
+  aspect-ratio: 1 / 1.05;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.roulette-caption-bar {
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--text-dark);
+}
+
+.roulette-caption-bar p {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  max-width: 340px;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   BLOQUE 3: MANIFIESTO PRE-SLIDES (RODILLO)
+   ========================================================================== */
+.manifesto-section {
+  padding: 110px 32px 140px;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.manifesto-monogram-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-left: 1vw;
+}
+
+.mono-box {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mono-box-small {
+  width: 56px;
+  height: 92px;
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+}
+
+.mono-box-main {
+  width: 270px;
+  height: 440px;
+  border: 1px solid var(--text-dark);
+  background-color: transparent;
+  color: var(--text-dark);
+}
+
+.mono-box-right {
+  width: 138px;
+  height: 225px;
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+  align-self: flex-end;
+}
+
+.mono-roller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-display);
+  line-height: 1;
+  will-change: transform;
+}
+
+.mono-box-small .mono-roller span {
+  font-size: 4.5rem;
+  height: 92px;
+  display: flex;
+  align-items: center;
+}
+
+.mono-box-main .mono-roller span {
+  font-size: 21rem;
+  height: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.mono-box-right .mono-roller span {
+  font-size: 10.5rem;
+  height: 225px;
+  display: flex;
+  align-items: center;
+}
+
+.manifesto-paragraph {
+  font-size: clamp(1.75rem, 3.15vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* ==========================================================================
+   BLOQUE 4: GAMING SLIDER DE 5 PERSONAJES CON PIN
+   ========================================================================== */
+.expertise-pin-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.expertise-slides-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.exp-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 70px 48px 0;
+  will-change: clip-path;
+}
+
+.slide-1 { z-index: 1; }
+.slide-2 { z-index: 2; }
+.slide-3 { z-index: 3; }
+.slide-4 { z-index: 4; }
+.slide-5 { z-index: 5; }
+
+.exp-main-heading {
+  text-align: center;
+  font-size: clamp(3.8rem, 8.2vw, 8.8rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.exp-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 34vw 1fr;
+  align-items: center;
+  gap: 32px;
+  height: calc(100vh - 210px);
+}
+
+.exp-left {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  padding-left: 1vw;
+}
+
+.exp-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.exp-title {
+  font-size: clamp(1.6rem, 2.5vw, 2.65rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.exp-center {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.exp-img-container {
+  width: 100%;
+  height: 92%;
+  overflow: hidden;
+  transform-origin: center bottom;
+  will-change: transform;
+  background-color: #1a1a1a;
+}
+
+.exp-right {
+  padding-left: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+}
+
+.exp-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-tags li {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 992px) {
+  .showcase-split {
+    grid-template-columns: 1fr;
+  }
+  .showcase-right {
+    margin-top: 0;
+    align-items: flex-start;
+  }
+  .showcase-right .showcase-small {
+    width: 100%;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+  }
+  .exp-content-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+  .exp-center {
+    max-width: 340px;
+    height: 320px;
+  }
+  .exp-right {
+    padding-left: 0;
+    align-items: center;
+  }
+}

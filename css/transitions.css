@@ -1,0 +1,101 @@
+/* ==========================================================================
+   TRANSITIONS.CSS — CELONOR
+   Telón de llegada (.cx-arrival), telón de salida (.cx-exit) y barra de
+   progreso inferior para bio.html / character.html.
+   NO se carga en index.html.
+   ========================================================================== */
+
+/* 1. TELÓN DE ENTRADA (#pageCurtain) */
+.cx-arrival {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d0d0d;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  will-change: transform;
+}
+
+.cx-logo {
+  display: inline-flex;
+  overflow: hidden;
+  padding: 0.1em 0.15em;
+  font-family: 'Antonio', Impact, sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.6rem, 11vw, 9.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.cx-char {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* 2. TELÓN DE SALIDA (.cx-exit)
+   IMPORTANTE: Sin transform en CSS para no contaminar el cálculo de y / yPercent en GSAP */
+.cx-exit {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d0d0d;
+  z-index: 100000;
+  pointer-events: all;
+  will-change: transform;
+}
+
+html.cx-leaving,
+html.cx-leaving body {
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* 3. BARRA DE PROGRESO DE SALIDA EN BIO / CHARACTER (#projectsScrollBar) */
+.projects-scroll-bar {
+  position: relative;
+  overflow: hidden;
+  --cx-progress: 0;
+}
+
+.projects-scroll-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #0d0d0d;
+  transform: scaleX(var(--cx-progress, 0));
+  transform-origin: left center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects-scroll-bar > * {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: #ffffff;
+}
+
+/* 4. AJUSTES DEL FOOTER MAESTRO ESTÁTICO EN PÁGINAS SECUNDARIAS */
+.contact-section--static {
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  transform: none !important;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.contact-section--static .contact-scroll-track {
+  min-height: 0 !important;
+  height: auto !important;
+  transform: none !important;
+}

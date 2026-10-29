@@ -1,0 +1,547 @@
+/* ==========================================================================
+   MENU.CSS — CELONOR
+   Copia fiel del bloque "logo fijo + píldora MENU + overlay fullscreen" de css/style.css
+   (líneas 86-612 y el estado .is-active del final). Es lo que usa index.html.
+   Sirve para bio.html y projects.html, que NO pueden cargar style.css completo porque su
+   regla `html, body` pintaría el fondo de crema. Cárgalo DESPUÉS del CSS propio de la página.
+   Las variables --cx-* garantizan el mismo naranja y la misma tipografía que index,
+   sin depender de las variables de cada página.
+   ========================================================================== */
+:root {
+  --cx-orange: #e68a5c;
+  --cx-condensed: 'Antonio', sans-serif;
+}
+
+/* =========================================================
+   2.5 OVERLAY DE MENÚ FULLSCREEN (#menuOverlay)
+========================================================= */
+/* El logo fijo (.fixed-small-logo) se queda visible con el menú abierto: es el único CELONOR de arriba a la izquierda.
+   Solo se desactiva su interacción para que no sea clicable mientras el overlay está abierto. */
+body.is-menu-open .fixed-small-logo {
+  pointer-events: none !important;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 900;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 28px 0 28px;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.menu-overlay.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* --- A. HEADER DEL MENÚ ---
+   El logo CELONOR de arriba a la izquierda es el logo fijo (.fixed-small-logo), que queda
+   visible por encima del overlay. Aquí solo va el selector de idioma, alineado a la derecha. */
+.menu-overlay__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: 43px;
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.menu-overlay__top-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 64px; /* Fix for overlap with fixed close button */
+}
+
+/* Selector de idioma en cápsula píldora (FR / EN) */
+.menu-lang-pill {
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-lang-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 4px 2px;
+  transition: color 0.3s ease, transform 0.25s ease;
+}
+
+.menu-lang-btn.is-active,
+.menu-lang-btn:hover {
+  color: var(--cx-orange);
+}
+
+.menu-lang-divider {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.28);
+  user-select: none;
+}
+
+/* Botón de cierre: círculo naranja con icono X que crece en hover */
+.menu-close-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--cx-orange);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
+  will-change: transform;
+}
+
+.menu-close-btn:hover {
+  transform: scale(1.18);
+}
+
+.menu-close-btn__icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.menu-close-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 1.8px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transform-origin: center center;
+  will-change: transform, width;
+}
+
+/* --- B & C. CUERPO CENTRAL DEL MENÚ --- */
+.menu-overlay__content {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 4vw;
+  width: 100%;
+  padding: 2vh 4vw 0 6vw;
+  margin: auto 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Columna Izquierda: Navegación Principal */
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6vh;
+}
+
+.menu-nav__mask {
+  overflow: hidden;
+  padding: 4px 18px 6px 0;
+}
+
+.menu-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  --arrow-size: clamp(1.6rem, 2.6vw, 2.8rem);
+  --arrow-gap: 12px;
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 3.2vw, 3.5rem); /* Achicado */
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+.menu-nav__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  color: #ffffff;
+  pointer-events: none;
+  /* Está a la izquierda del texto. En reposo queda "escondida" fuera de la máscara
+     (margen negativo = no ocupa lugar); en hover entra y empuja la palabra a la derecha. */
+  margin-left: calc(-1 * (var(--arrow-size) + var(--arrow-gap)));
+  margin-right: var(--arrow-gap);
+  transition: margin-left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu-nav__link:hover .menu-nav__arrow {
+  margin-left: 0;
+}
+
+.menu-nav__arrow svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform: scale(0.55);
+  transform-origin: center center;
+  transition: transform 0.18s ease-in, opacity 0.15s ease-in;
+}
+
+.menu-nav__arrow path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition: stroke-dashoffset 0.15s ease-in, opacity 0s linear 0.15s;
+}
+
+.menu-nav__link:hover .menu-nav__arrow svg {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease-out;
+}
+
+.menu-nav__link:hover .arrow-stem {
+  opacity: 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.22s cubic-bezier(0.65, 0, 0.35, 1), opacity 0s;
+}
+
+.menu-nav__link:hover .arrow-head {
+  opacity: 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.18s cubic-bezier(0.22, 1, 0.36, 1) 0.14s, opacity 0s linear 0.14s;
+}
+
+.menu-nav__text {
+  display: inline-block;
+  will-change: transform;
+  transition: color 0.3s ease;
+}
+
+.menu-nav__link:hover .menu-nav__text {
+  color: #ffffff;
+}
+
+/* Columna Derecha: Grid de Datos de Contacto y Socials */
+.menu-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  column-gap: 4vw;
+  row-gap: 5.5vh;
+  align-self: center;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+
+.menu-info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  will-change: transform, opacity;
+}
+
+/* Hover grupal o individual a naranja de acento (#e68a5c / var(--cx-orange)) */
+.menu-info-location {
+  cursor: pointer;
+}
+
+.menu-info-location__line {
+  color: #ffffff;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu-info-location:hover .menu-info-location__line {
+  color: var(--cx-orange);
+}
+
+.menu-info-socials {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menu-info-link {
+  display: inline-block;
+  color: #ffffff;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu-info-link:hover {
+  color: var(--cx-orange);
+  transform: translateX(4px);
+}
+
+.menu-info-link--email {
+  text-transform: lowercase;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  word-break: break-all;
+}
+
+/* --- D. PARTE INFERIOR DEL MENÚ --- */
+.menu-overlay__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3vw;
+  width: 100%;
+  padding-left: 6vw;
+  position: relative;
+  z-index: 5;
+  margin-top: auto;
+}
+
+/* Miniatura flotante izquierda con marco blanco que carga img/home.jpg */
+.menu-overlay__card {
+  margin-bottom: 3.6vh;
+  flex-shrink: 0;
+  will-change: transform, opacity;
+}
+
+.menu-overlay__card-frame {
+  width: clamp(220px, 22vw, 320px);
+  aspect-ratio: 16 / 10;
+  background-color: #ffffff;
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  transform: rotate(0deg); /* Sin rotar */
+}
+
+.menu-overlay__card-frame:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.menu-overlay__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Logo gigante "CELONOR" en Antonio blanco cortado sobre el borde inferior */
+.menu-overlay__giant-mask {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-left: auto;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+}
+
+.menu-overlay__giant-logo {
+  display: inline-flex;
+  align-items: flex-end;
+  user-select: none;
+  transform: translateY(0); 
+}
+
+.menu-giant-char {
+  display: inline-block;
+  font-family: var(--cx-condensed);
+  font-weight: 700;
+  font-size: clamp(4rem, 13vw, 16rem); /* Reducido para evitar cortes */
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  text-transform: uppercase;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 960px) {
+  .menu-giant-char {
+    font-size: 13.5vw;
+  }
+}
+
+/* =========================================================
+   2. ELEMENTOS FIJOS: LOGO PEQUEÑO Y PÍLDORA DE MENÚ
+========================================================= */
+.fixed-small-logo {
+  position: fixed;
+  top: 26px;
+  left: 28px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  overflow: hidden;
+  padding: 4px 6px;
+  pointer-events: none;
+
+  /* [AJUSTE 1] Contraste binario exacto por mezcla de capas.
+     El logo es SIEMPRE blanco y se mezcla con lo que haya detrás mediante
+     `difference` (|fondo - blanco|), calculado píxel a píxel por el navegador:
+       · sobre blanco  -> negro (solo la porción del glifo que se superpone)
+       · sobre crema   -> casi negro
+       · sobre #0d0d0d -> casi blanco
+     No hay JS ni tweens de color: la inversión es continua y subpíxel.
+     El blend se aplica al contenedor (grupo completo) para que la máscara
+     overflow:hidden de la animación de letras siga funcionando. */
+  color: #ffffff;
+  mix-blend-mode: difference;
+}
+
+.small-char {
+  display: inline-block;
+  font-family: var(--cx-condensed);
+  font-weight: 700;
+  font-size: 2.7rem;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  /* [AJUSTE 1] Siempre blanco: el color final lo resuelve el mix-blend-mode del padre */
+  color: #ffffff;
+  text-transform: uppercase;
+  will-change: transform, opacity;
+}
+
+.menu-pill {
+  position: fixed;
+  top: 22px;
+  right: 28px;
+  z-index: 999;
+  height: 44px;
+  width: 44px;
+  background-color: #161616;
+  color: #ffffff;
+  border: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 0 16px 0 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: width, transform, opacity;
+}
+
+.menu-pill__text {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-pill__circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--cx-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hamburger {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hamburger span {
+  display: block;
+  height: 1.5px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+.hamburger span:nth-child(1) { width: 9px; }
+.hamburger span:nth-child(2) { width: 6px; }
+
+.menu-pill:hover .menu-pill__circle {
+  transform: scale(1.75) translateZ(0) !important;
+}
+
+.menu-pill:hover .hamburger {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+/* Estado del botón MENU cuando el overlay está abierto.
+   El círculo naranja crece hasta 44px, la píldora se encoge y el texto se pliega:
+   todo eso lo anima GSAP en openMenu()/closeMenu() (sin saltos). Aquí solo se fija
+   que el hover no escale el círculo mientras es la X. */
+.menu-pill.is-active .menu-pill__circle {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  transition: none;
+}
+
+.menu-pill.is-active .hamburger {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+

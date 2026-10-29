@@ -1,0 +1,617 @@
+/* ==========================================================================
+   VARIABLES & RESET — CELONOR BIO PAGE
+   ========================================================================== */
+:root {
+  --bg-light: #f4f3ef;
+  --bg-white: #ffffff;
+  --text-dark: #0e0e0e;
+  --text-muted: #5a5a5a;
+  --border-subtle: rgba(14, 14, 14, 0.14);
+
+  /* Colores por categoría */
+  --cat-miniseries: #c1ccd7;
+  --cat-series: #849687;
+  --cat-cortos: #b597a3;
+  --cat-peliculas: #e67e51;
+
+  /* Color activo dinámico (cambia por JS según la obra) */
+  --theme-color: #c1ccd7;
+
+  /* Fuentes */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Antonio', Impact, sans-serif;
+
+  /* Espaciados */
+  --pad-x: clamp(1.5rem, 3.8vw, 4.5rem);
+}
+
+html:root {
+  --cx-orange: var(--theme-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: auto;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-light);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================================================
+   3. HERO DE LA OBRA (COLOR TEMÁTICO DINÁMICO + IMAGEN 1)
+   ========================================================================== */
+.bio-hero {
+  background-color: var(--theme-color);
+  padding: clamp(6.5rem, 11vw, 9.5rem) var(--pad-x) clamp(2.5rem, 5vw, 4.5rem);
+  transition: background-color 0.6s ease;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bio-hero__top {
+  max-width: 1680px;
+  margin: 0 auto 2.5rem;
+}
+
+.bio-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(14, 14, 14, 0.2);
+  margin-bottom: 2rem;
+}
+
+.bio-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(14, 14, 14, 0.35);
+  border-radius: 999px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bio-back-link:hover {
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+.bio-hero__badges {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bio-badge-cat,
+.bio-badge-year,
+.bio-badge-index {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.38rem 0.9rem;
+  border-radius: 999px;
+}
+
+.bio-badge-cat {
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+.bio-badge-year {
+  border: 1px solid rgba(14, 14, 14, 0.4);
+}
+
+.bio-badge-index {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.bio-hero__title-wrap {
+  /* ¡ARREGLO DEL TÍTULO CORTADO! 
+     Le damos padding vertical para que las letras no choquen con el contenedor */
+  padding: 10px 0;
+}
+
+.bio-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 9.2vw, 9.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+}
+
+.bio-hero__FullMedia {
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+.bio-hero__img-frame {
+  width: 100%;
+  height: clamp(340px, 64vh, 760px);
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  background-color: #161616;
+}
+
+.bio-hero__img {
+  transform: scale(1.08);
+  will-change: transform;
+}
+
+/* ==========================================================================
+   4. SECCIÓN EDITORIAL (FICHA TÉCNICA + ORIGEN Y PRODUCCIÓN + IMAGEN 2)
+   ========================================================================== */
+.bio-editorial {
+  padding: clamp(4rem, 8vw, 8rem) var(--pad-x);
+  max-width: 1680px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bio-editorial__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.45fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.bio-credits__sticky {
+  position: sticky;
+  top: 6.5rem;
+  background-color: var(--bg-white);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  border: 1px solid var(--border-subtle);
+  border-top: 5px solid var(--theme-color);
+}
+
+.bio-section-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.bio-credits__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bio-credits__item {
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bio-credits__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.bio-credits__dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.bio-credits__dd {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-dark);
+}
+
+.bio-text-block {
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.bio-text-block__heading {
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  margin-bottom: 1.5rem;
+}
+
+.bio-text-block__paragraph {
+  font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+  line-height: 1.72;
+  color: #222222;
+  font-weight: 300;
+}
+
+.bio-figure-secondary__mask {
+  width: 100%;
+  height: clamp(280px, 46vh, 540px);
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.bio-figure-secondary__caption {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   5. PROCESO DE CREACIÓN + GALERÍA ASIMÉTRICA (IMAGEN 3 E IMAGEN 4)
+   ========================================================================== */
+.bio-process {
+  padding: clamp(4rem, 8vw, 8rem) var(--pad-x);
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+.bio-process__header {
+  max-width: 900px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.bio-process__title {
+  font-size: clamp(2.1rem, 4vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.bio-process__text-wrap {
+  max-width: 920px;
+  margin-left: auto;
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  padding-left: clamp(1.25rem, 3vw, 2.5rem);
+  border-left: 3px solid var(--theme-color);
+}
+
+.bio-process__paragraph {
+  font-size: clamp(1.1rem, 1.45vw, 1.35rem);
+  line-height: 1.75;
+  font-weight: 300;
+  color: #1c1c1c;
+}
+
+.bio-process__dual-gallery {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.bio-card-visual__frame {
+  overflow: hidden;
+  background-color: #141414;
+}
+
+.bio-card-visual--large .bio-card-visual__frame {
+  height: clamp(320px, 54vh, 640px);
+}
+
+.bio-card-visual--offset {
+  margin-top: clamp(2rem, 8vw, 7rem);
+}
+
+.bio-card-visual--offset .bio-card-visual__frame {
+  height: clamp(280px, 44vh, 500px);
+}
+
+.bio-card-visual__meta {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   6. SHOWCASE HORIZONTAL DE 5 PANELES (COMO EN EL VIDEO 00:00)
+   ========================================================================== */
+.bio-showcase {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.bio-showcase__pin {
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.bio-showcase__track {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  will-change: transform;
+}
+
+.showcase-panel {
+  flex-shrink: 0;
+  height: 100%;
+  border-right: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.showcase-panel--hero {
+  width: clamp(520px, 62vw, 1020px);
+}
+
+.showcase-panel--card {
+  width: clamp(320px, 32vw, 520px);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.showcase-panel__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-panel__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.showcase-panel__media:hover .showcase-panel__img {
+  transform: scale(1.05);
+}
+
+.showcase-panel__giant-title {
+  position: absolute;
+  left: clamp(1.5rem, 3vw, 3rem);
+  bottom: clamp(1.5rem, 3vw, 2.75rem);
+  right: clamp(1.5rem, 3vw, 3rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.2vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+.showcase-panel__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.showcase-panel__thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--theme-color);
+}
+
+.showcase-panel__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   7. SECCIÓN FINAL DEL VIDEO: BARRA "Projects⁰" + FOOTER MONUMENTAL
+   ========================================================================== */
+.scroll-outro {
+  position: relative;
+  background-color: var(--bg-white);
+}
+
+.projects-scroll-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(2rem, 8vw, 9rem);
+  background-color: #f4f3ef;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.projects-scroll-bar__hint {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.projects-scroll-bar__center {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.2rem;
+  transition: transform 0.3s ease;
+}
+
+.projects-scroll-bar__center:hover {
+  transform: scale(1.03);
+}
+
+.projects-scroll-bar__word {
+  font-size: clamp(2.8rem, 5.2vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-dark);
+}
+
+.projects-scroll-bar__count {
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 0.25rem;
+  color: var(--text-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.footer-inverted {
+  background-color: var(--theme-color);
+  color: #0e0e0e;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 2.2vw 0;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+.footer-inverted__top {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1fr 1fr;
+  gap: 2rem;
+  padding: 0 0 clamp(2.5rem, 4vw, 3.75rem);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.footer-line {
+  display: block;
+  line-height: 1.55;
+}
+
+.footer-col--contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.footer-social-list li {
+  line-height: 1.55;
+}
+
+.footer-col--legal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.footer-interactive {
+  transition: opacity 0.25s ease;
+}
+
+.footer-interactive:hover {
+  opacity: 0.55;
+}
+
+.footer-inverted__divider {
+  width: 100%;
+  margin: 0 0 clamp(1.5rem, 2.5vw, 2.25rem);
+  height: 1px;
+  background-color: rgba(14, 14, 14, 0.35);
+}
+
+.footer-inverted__monumental {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 0.76;
+}
+
+.footer-inverted__giant-text {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: var(--font-display);
+  font-size: clamp(6.5rem, 24.5vw, 32rem);
+  font-weight: 700;
+  line-height: inherit;
+  letter-spacing: -0.03em;
+  color: #0e0e0e;
+  text-transform: uppercase;
+  transform: translateY(8%);
+  user-select: none;
+}
+
+.footer-inverted__giant-text span {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .bio-editorial__grid { grid-template-columns: 1fr; }
+  .bio-credits__sticky { position: static; }
+  .bio-process__dual-gallery { grid-template-columns: 1fr; }
+  .bio-card-visual--offset { margin-top: 0; }
+  .footer-inverted__top { grid-template-columns: repeat(2, 1fr); }
+  .footer-col--legal { align-items: flex-start; text-align: left; }
+}
+
+@media (max-width: 768px) {
+  .projects-scroll-bar { padding: 1.5rem var(--pad-x); justify-content: center; }
+  .projects-scroll-bar__hint { display: none; }
+  .footer-inverted__top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .showcase-panel--hero { width: 88vw; }
+  .showcase-panel--card { width: 72vw; }
+}
