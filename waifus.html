@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waifus — CELONOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/waifus.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+</head>
+<body data-page="waifus" data-cx-menu>
+
+  <div class="cx-arrival" id="pageCurtain" aria-hidden="true">
+    <div class="cx-logo" aria-hidden="true">
+      <span class="cx-char">C</span><span class="cx-char">E</span><span class="cx-char">L</span><span class="cx-char">O</span><span class="cx-char">N</span><span class="cx-char">O</span><span class="cx-char">R</span>
+    </div>
+  </div>
+
+  <a href="index.html" class="fixed-small-logo" id="smallAkaruLogo" aria-label="Back to home">
+    <span class="small-char">C</span><span class="small-char">E</span><span class="small-char">L</span><span class="small-char">O</span><span class="small-char">N</span><span class="small-char">O</span><span class="small-char">R</span>
+  </a>
+
+  <button class="menu-pill" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+    <span class="menu-pill__text" id="menuText">MENU</span>
+    <span class="menu-pill__circle" id="menuCircle">
+      <span class="hamburger" id="pillHamburger">
+        <span></span>
+        <span></span>
+      </span>
+    </span>
+  </button>
+
+  <aside class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <header class="menu-overlay__header">
+      <div class="menu-overlay__top-right">
+        <div class="menu-lang-pill" role="group" aria-label="Language selector">
+          <button type="button" class="menu-lang-btn" data-lang="fr">FR</button>
+          <span class="menu-lang-divider" aria-hidden="true">/</span>
+          <button type="button" class="menu-lang-btn is-active" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-overlay__content">
+      <nav class="menu-nav" aria-label="Main navigation">
+        <div class="menu-nav__mask">
+          <a href="projects.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Projects</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="gaming.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Gaming</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="waifus.html" class="menu-nav__link" data-menu-target="waifus">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Waifus</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="contact.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Contact</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="menu-info-grid">
+        <div class="menu-info-block" data-menu-stagger>
+          <div class="menu-info-location">
+            <p class="menu-info-location__line">C.A.B.A.</p>
+            <p class="menu-info-location__line">BUENOS AIRES</p>
+            <p class="menu-info-location__line">ARGENTINA</p>
+          </div>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <ul class="menu-info-socials">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">INSTAGRAM</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">LINKEDIN</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">TWITTER</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">GITHUB</a></li>
+          </ul>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="mailto:marcelo.orozco.toledo@gmail.com" class="menu-info-link menu-info-link--email">
+            marcelo.orozco.toledo@gmail.com
+          </a>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="tel:+541131991066" class="menu-info-link menu-info-link--phone">
+            +54 11 3199-1066
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="menu-overlay__footer">
+      <div class="menu-overlay__card" id="menuFeatureCard">
+        <div class="menu-overlay__card-frame">
+          <img src="img/general/home.jpg" alt="Celonor Featured Work" class="menu-overlay__card-img" />
+        </div>
+      </div>
+      <div class="menu-overlay__giant-mask" aria-hidden="true">
+        <div class="menu-overlay__giant-logo" id="menuGiantLogo">
+          <span class="menu-giant-char">C</span><span class="menu-giant-char">E</span><span class="menu-giant-char">L</span><span class="menu-giant-char">O</span><span class="menu-giant-char">N</span><span class="menu-giant-char">O</span><span class="menu-giant-char">R</span>
+        </div>
+      </div>
+    </footer>
+  </aside>
+
+  <main data-cx-content>
+
+    <!-- =========================================================
+         1. HERO SECTION (Imágenes Generales)
+    ========================================================== -->
+    <section class="waifu-hero">
+      <div class="w-hero__top">
+        <div class="w-hero__title-mask">
+          <h1 class="w-hero__title" id="waifuTitle">Culture<br>&amp; Icons</h1>
+        </div>
+        <p class="w-hero__desc" id="waifuDesc">
+          Beyond storytelling, anime thrives on its character design. A celebration of the aesthetics, tropes, and strong personalities that define the medium.
+        </p>
+      </div>
+
+      <div class="w-hero__gallery">
+        <div class="w-hero__img-box box-main" id="wHeroImg1">
+          <img src="img/characters/general/01.jpg" alt="Anime aesthetic 1" />
+        </div>
+        <div class="w-hero__img-box box-sub" id="wHeroImg2">
+          <img src="img/characters/general/02.jpg" alt="Anime aesthetic 2" />
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         2. MANIFIESTO (Bloque Oscuro)
+    ========================================================== -->
+    <section class="waifu-manifesto">
+      <div class="w-manifesto__inner">
+        <div class="w-manifesto__left">
+          <h2 class="w-manifesto__headline">The Anatomy of a Favorite.</h2>
+          <p class="w-manifesto__text">
+            It’s not just about visual appeal—though a flawless design never hurts. It’s the voice acting, the character arc, their unapologetic attitude, or the way they steal every scene they are in. These characters carry their shows, driving fandoms and shaping internet culture.
+          </p>
+        </div>
+        <div class="w-manifesto__right">
+          <div class="w-manifesto__img-mask">
+            <img src="img/characters/general/03.jpg" alt="Anime aesthetic 3" class="w-manifesto__img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. LA GRILLA DE WAIFUS (Textos Lore Actualizados)
+    ========================================================== -->
+    <section class="waifu-roster">
+      <header class="w-roster__header">
+        <span class="w-roster__kicker">01 // FEATURED SELECTION</span>
+        <h2 class="w-roster__title">The Roster</h2>
+      </header>
+
+      <div class="w-roster__grid">
+        
+        <!-- 1. Megumin -->
+        <article class="w-card w-card--megumin">
+          <div class="w-card__img-wrap">
+            <img src="img/characters/megumin.jpg" alt="Megumin" />
+          </div>
+          <div class="w-card__content">
+            <span class="w-card__tag">KONOSUBA</span>
+            <h3 class="w-card__name">Megumin</h3>
+            <p class="w-card__hover-text">Archmage of the Crimson Magic Clan who refuses to cast anything other than devastating Explosion magic.</p>
+          </div>
+        </article>
+
+        <!-- 2. Ai Hayasaka -->
+        <article class="w-card w-card--hayasaka">
+          <div class="w-card__img-wrap">
+            <img src="img/characters/ai-hayasaka.jpg" alt="Ai Hayasaka" />
+          </div>
+          <div class="w-card__content">
+            <span class="w-card__tag">KAGUYA-SAMA</span>
+            <h3 class="w-card__name">Ai Hayasaka</h3>
+            <p class="w-card__hover-text">Kaguya's indispensable personal maid, master of disguises, and the true shadow hero of Shuchiin Academy.</p>
+          </div>
+        </article>
+
+        <!-- 3. Emilia -->
+        <article class="w-card w-card--emilia">
+          <div class="w-card__img-wrap">
+            <img src="img/characters/emilia.jpg" alt="Emilia" />
+          </div>
+          <div class="w-card__content">
+            <span class="w-card__tag">RE:ZERO</span>
+            <h3 class="w-card__name">Emilia</h3>
+            <p class="w-card__hover-text">A half-elf spiritualist and royal candidate striving to claim the throne despite the world's deep prejudice.</p>
+          </div>
+        </article>
+
+        <!-- 4. Rin Tohsaka -->
+        <article class="w-card w-card--rin">
+          <div class="w-card__img-wrap">
+            <img src="img/characters/rin-tohsaka.jpg" alt="Rin Tohsaka" />
+          </div>
+          <div class="w-card__content">
+            <span class="w-card__tag">FATE/STAY NIGHT</span>
+            <h3 class="w-card__name">Rin Tohsaka</h3>
+            <p class="w-card__hover-text">A top-tier magus from the Tohsaka lineage and a tactical genius wielding gem magecraft in the Holy Grail War.</p>
+          </div>
+        </article>
+
+        <!-- 5. Elaina -->
+        <article class="w-card w-card--elaina">
+          <div class="w-card__img-wrap">
+            <img src="img/characters/elaina.jpg" alt="Elaina" />
+          </div>
+          <div class="w-card__content">
+            <span class="w-card__tag">WANDERING WITCH</span>
+            <h3 class="w-card__name">Elaina</h3>
+            <p class="w-card__hover-text">The Ashen Witch. A traveling prodigy who chronicles the world's beauty and tragedies, usually refusing to intervene.</p>
+          </div>
+        </article>
+
+        <!-- 6. Mikoto Misaka -->
+        <article class="w-card w-card--misaka">
+          <div class="w-card__img-wrap">
+            <img src="img/characters/mikoto-misaka.jpg" alt="Mikoto Misaka" />
+          </div>
+          <div class="w-card__content">
+            <span class="w-card__tag">RAILGUN</span>
+            <h3 class="w-card__name">Mikoto Misaka</h3>
+            <p class="w-card__hover-text">Academy City's Level 5 electromaster, famous for firing arcade coins at three times the speed of sound.</p>
+          </div>
+        </article>
+
+        <!-- 7. Iroha Isshiki -->
+        <article class="w-card w-card--iroha">
+          <div class="w-card__img-wrap">
+            <img src="img/characters/iroha-isshiki.jpg" alt="Iroha Isshiki" />
+          </div>
+          <div class="w-card__content">
+            <span class="w-card__tag">OREGAIRU</span>
+            <h3 class="w-card__name">Iroha Isshiki</h3>
+            <p class="w-card__hover-text">The deceptively capable Student Council President who hides a sharp, manipulative mind behind a cute kouhai persona.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. MATRIZ DE ARQUETIPOS (Fondo Fotográfico Interactivo)
+    ========================================================== -->
+    <section class="archetype-matrix">
+      <header class="w-roster__header matrix-header">
+        <span class="w-roster__kicker">02 // THE TROPES</span>
+        <h2 class="w-roster__title">Archetype Decoder</h2>
+      </header>
+
+      <div class="matrix-grid">
+        <div class="matrix-cell" data-word="TSUNDERE" data-kanji="ツンデレ" data-color="#e67e51">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/tsundere.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">ツンデレ</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+
+        <div class="matrix-cell" data-word="KUUDERE" data-kanji="クーデレ" data-color="#c1ccd7">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/kuudere.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">クーデレ</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+
+        <div class="matrix-cell" data-word="YANDERE" data-kanji="ヤンデレ" data-color="#a63c4f">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/yandere.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">ヤンデレ</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+
+        <div class="matrix-cell" data-word="DANDERE" data-kanji="ダンデレ" data-color="#849687">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/dandere.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">ダンデレ</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+
+        <div class="matrix-cell" data-word="CHUUNIBYOU" data-kanji="中二病" data-color="#b597a3">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/chuunibyou.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">中二病</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+
+        <div class="matrix-cell" data-word="ONEESAN" data-kanji="お姉さん" data-color="#d97843">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/oneesan.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">お姉さん</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+
+        <div class="matrix-cell" data-word="KOUHAI" data-kanji="後輩" data-color="#e6b151">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/kouhai.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">後輩</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+
+        <div class="matrix-cell" data-word="OJOU-SAMA" data-kanji="お嬢様" data-color="#d1a6c9">
+          <div class="matrix-cell__bg-img" style="background-image: url('img/characters/archetypes/ojousama.jpg');"></div>
+          <div class="matrix-cell__bg-kanji">お嬢様</div>
+          <div class="matrix-cell__content"><span class="matrix-cell__glitch">SYSTEM.LOCK</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER MAESTRO -->
+    <footer class="contact-section contact-section--static" id="siteFooter">
+      <div class="contact-scroll-track">
+        <div class="contact-bottom">
+          <div class="contact-info-bar">
+            <div class="contact-col contact-col--location">
+              <p class="contact-location-line">CELONOR</p>
+              <p class="contact-location-line">C.A.B.A.</p>
+              <p class="contact-location-line">Buenos Aires, Argentina</p>
+            </div>
+            <div class="contact-col contact-col--direct">
+              <a href="mailto:marcelo.orozco.toledo@gmail.com" class="contact-direct-link">marcelo.orozco.toledo@gmail.com</a>
+              <a href="tel:+541131991066" class="contact-direct-link contact-direct-link--phone">+54 11 3199-1066</a>
+            </div>
+            <div class="contact-col contact-col--socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">INSTAGRAM</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LINKEDIN</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">TWITTER</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">GITHUB</a>
+            </div>
+            <div class="contact-col contact-col--legal">
+              <a href="#legal-notice" class="contact-legal-text contact-legal-link">LEGAL NOTICE</a>
+              <span class="contact-legal-text contact-legal-text--copy">CELONOR © 2026</span>
+            </div>
+          </div>
+          <div class="contact-giant-logo-wrap">
+            <div class="contact-giant-logo" aria-label="CELONOR">
+              <span>CELONOR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script/transitions.js"></script>
+  <script src="script/waifus.js"></script>
+</body>
+</html>

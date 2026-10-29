@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming — CELONOR</title>
+
+  <!-- Google Fonts: Antonio + Inter + Anton -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Orden exacto igual al original: gaming.css -> style.css (trae botón píldora, menú y footer maestro) -> transitions.css -->
+  <link rel="stylesheet" href="css/gaming.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+</head>
+<body data-page="gaming" data-cx-menu>
+
+  <!-- Cortina de llegada -->
+  <div class="cx-arrival" id="pageCurtain" aria-hidden="true">
+    <div class="cx-logo" aria-hidden="true">
+      <span class="cx-char">C</span><span class="cx-char">E</span><span class="cx-char">L</span><span class="cx-char">O</span><span class="cx-char">N</span><span class="cx-char">O</span><span class="cx-char">R</span>
+    </div>
+  </div>
+
+  <!-- Logo fijo + Píldora MENU -->
+  <a href="index.html" class="fixed-small-logo" id="smallAkaruLogo" aria-label="Back to home">
+    <span class="small-char">C</span>
+    <span class="small-char">E</span>
+    <span class="small-char">L</span>
+    <span class="small-char">O</span>
+    <span class="small-char">N</span>
+    <span class="small-char">O</span>
+    <span class="small-char">R</span>
+  </a>
+
+  <button class="menu-pill" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+    <span class="menu-pill__text" id="menuText">MENU</span>
+    <span class="menu-pill__circle" id="menuCircle">
+      <span class="hamburger" id="pillHamburger">
+        <span></span>
+        <span></span>
+      </span>
+    </span>
+  </button>
+
+  <!-- Overlay Menú Fullscreen -->
+  <aside class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <header class="menu-overlay__header">
+      <div class="menu-overlay__top-right">
+        <div class="menu-lang-pill" role="group" aria-label="Language selector">
+          <button type="button" class="menu-lang-btn" data-lang="fr">FR</button>
+          <span class="menu-lang-divider" aria-hidden="true">/</span>
+          <button type="button" class="menu-lang-btn is-active" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-overlay__content">
+      <nav class="menu-nav" aria-label="Main navigation">
+        <div class="menu-nav__mask">
+          <a href="projects.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Projects</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="gaming.html" class="menu-nav__link" data-menu-target="gaming">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Gaming</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="waifus.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Waifus</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="contact.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Contact</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="menu-info-grid">
+        <div class="menu-info-block" data-menu-stagger>
+          <div class="menu-info-location">
+            <p class="menu-info-location__line">C.A.B.A.</p>
+            <p class="menu-info-location__line">BUENOS AIRES</p>
+            <p class="menu-info-location__line">ARGENTINA</p>
+          </div>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <ul class="menu-info-socials">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">INSTAGRAM</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">LINKEDIN</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">TWITTER</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">GITHUB</a></li>
+          </ul>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="mailto:marcelo.orozco.toledo@gmail.com" class="menu-info-link menu-info-link--email">
+            marcelo.orozco.toledo@gmail.com
+          </a>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="tel:+541131991066" class="menu-info-link menu-info-link--phone">
+            +54 11 3199-1066
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="menu-overlay__footer">
+      <div class="menu-overlay__card" id="menuFeatureCard">
+        <div class="menu-overlay__card-frame">
+          <img src="img/general/home.jpg" alt="Celonor Featured Work" class="menu-overlay__card-img" />
+        </div>
+      </div>
+      <div class="menu-overlay__giant-mask" aria-hidden="true">
+        <div class="menu-overlay__giant-logo" id="menuGiantLogo">
+          <span class="menu-giant-char">C</span><span class="menu-giant-char">E</span><span class="menu-giant-char">L</span><span class="menu-giant-char">O</span><span class="menu-giant-char">N</span><span class="menu-giant-char">O</span><span class="menu-giant-char">R</span>
+        </div>
+      </div>
+    </footer>
+  </aside>
+
+  <main id="smooth-content">
+
+    <!-- =================================================================
+         BLOQUE 1: HERO / HEADLINE INTRODUCTORIO
+    ================================================================== -->
+    <section class="hero">
+      <div class="hero-circles">
+        <div class="circle circle-blue"></div>
+        <div class="circle circle-orange"></div>
+      </div>
+
+      <div class="hero-container">
+        <div class="hero-top-row">
+          <div class="overflow-mask">
+            <h1 class="hero-title hero-title-left">built for</h1>
+          </div>
+          <p class="hero-sub-right">
+            VIRTUAL WORLDS &amp; ROSTERS — GAMING ARCHIVE
+          </p>
+        </div>
+
+        <div class="hero-line"></div>
+
+        <div class="hero-bottom-row">
+          <p class="hero-sub-left">
+            ICONIC PROTAGONISTS, LORE &amp; COMBAT KITS
+          </p>
+          <div class="overflow-mask">
+            <h1 class="hero-title hero-title-right">players only</h1>
+          </div>
+        </div>
+
+        <div class="hero-intro-wrap">
+          <p class="hero-paragraph">
+            Beyond frame rates and mechanics, the most memorable games live through their protagonists. This archive highlights five iconic characters whose visual design, survival instincts, and combat kits left a permanent mark.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         GALERÍA ASIMÉTRICA
+    ================================================================== -->
+    <section class="showcase-split">
+      <div class="showcase-left">
+        <div class="showcase-img-box showcase-big">
+          <img src="img/gaming/kiriko/kiriko-02.jpg" alt="Kiriko Featured" />
+        </div>
+      </div>
+      <div class="showcase-right">
+        <div class="showcase-img-box showcase-small">
+          <img src="img/gaming/jill-valentine/jill-valentine-02.jpg" alt="Jill Valentine Featured" />
+        </div>
+        <div class="showcase-img-box showcase-small">
+          <img src="img/gaming/ellie/ellie-02.jpg" alt="Ellie Featured" />
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         BLOQUE 2: PLAYER LOGS / CURATION (Reemplaza el antiguo Focus/Skills)
+    ================================================================== -->
+    <section class="skills-section">
+      <div class="skills-header">
+        <span class="skills-kicker">ARCHIVE CLASSIFICATION // 01 — 03</span>
+        <h2 class="skills-main-title">The Roster</h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Tarjeta 01 -->
+        <div class="skill-col">
+          <div class="skill-col-top">
+            <span class="skill-num">01</span>
+            <span class="skill-tag">HIGH-TEMPO &amp; PRECISION</span>
+          </div>
+          <h3 class="skill-title">Competitive &amp; Action</h3>
+          <p class="skill-desc">
+            Fast-paced decision making, projectile tracking, and clutch support utility in high-stakes arenas.
+          </p>
+          <ul class="skill-list">
+            <li><span>Overwatch 2</span> <span>Support / Kunai</span></li>
+            <li><span>Zenless Zone Zero</span> <span>Action Combat</span></li>
+            <li><span>Genshin Impact</span> <span>Elemental Teams</span></li>
+            <li><span>Custom Mods</span> <span>3DMigoto &amp; Blender</span></li>
+          </ul>
+        </div>
+
+        <!-- Tarjeta 02 -->
+        <div class="skill-col">
+          <div class="skill-col-top">
+            <span class="skill-num">02</span>
+            <span class="skill-tag">ATMOSPHERE &amp; GRIT</span>
+          </div>
+          <h3 class="skill-title">Survival &amp; Horror</h3>
+          <p class="skill-desc">
+            Scavenging scarce ammunition, mastering timing dodges, and enduring relentless bio-organic y post-apocalyptic threats.
+          </p>
+          <ul class="skill-list">
+            <li><span>Resident Evil</span> <span>S.T.A.R.S. Archive</span></li>
+            <li><span>The Last of Us</span> <span>Stealth &amp; Craft</span></li>
+            <li><span>The Walking Dead</span> <span>Narrative Choice</span></li>
+            <li><span>Raccoon City</span> <span>Tactical Evasion</span></li>
+          </ul>
+        </div>
+
+        <!-- Tarjeta 03 -->
+        <div class="skill-col">
+          <div class="skill-col-top">
+            <span class="skill-num">03</span>
+            <span class="skill-tag">WORLDBUILDING &amp; DEPTH</span>
+          </div>
+          <h3 class="skill-title">RPG &amp; Strategy</h3>
+          <p class="skill-desc">
+            Vast dark-fantasy continents, planar travel, and deep simulation systems driven by lore and long-term planning.
+          </p>
+          <ul class="skill-list">
+            <li><span>The Witcher 3</span> <span>Elder Blood</span></li>
+            <li><span>Victoria 3</span> <span>Grand Strategy</span></li>
+            <li><span>Football Manager 26</span> <span>Tactical Data</span></li>
+            <li><span>Kerbal Space Program</span> <span>Orbital Physics</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         RULETA AUTOMÁTICA DE 9 IMÁGENES
+    ================================================================== -->
+    <section class="roulette-section">
+      <div class="roulette-viewport">
+        <div class="roulette-track" id="rouletteTrack">
+          <!-- Tira original (1 a 9) -->
+          <div class="roulette-item"><img src="img/gaming/kiriko/kiriko-03.jpg" alt="Kiriko"></div>
+          <div class="roulette-item"><img src="img/gaming/jill-valentine/jill-valentine-03.jpg" alt="Jill Valentine"></div>
+          <div class="roulette-item"><img src="img/gaming/ellie/ellie-03.jpg" alt="Ellie"></div>
+          <div class="roulette-item"><img src="img/gaming/ciri/ciri-03.jpg" alt="Ciri"></div>
+          <div class="roulette-item"><img src="img/gaming/clementine/clementine-03.jpg" alt="Clementine"></div>
+          <div class="roulette-item"><img src="img/gaming/kiriko/kiriko-04.jpg" alt="Kiriko"></div>
+          <div class="roulette-item"><img src="img/gaming/jill-valentine/jill-valentine-04.jpg" alt="Jill Valentine"></div>
+          <div class="roulette-item"><img src="img/gaming/ellie/ellie-04.jpg" alt="Ellie"></div>
+          <div class="roulette-item"><img src="img/gaming/ciri/ciri-04.jpg" alt="Ciri"></div>
+          <!-- Duplicado para loop infinito -->
+          <div class="roulette-item"><img src="img/gaming/kiriko/kiriko-03.jpg" alt="Kiriko"></div>
+          <div class="roulette-item"><img src="img/gaming/jill-valentine/jill-valentine-03.jpg" alt="Jill Valentine"></div>
+          <div class="roulette-item"><img src="img/gaming/ellie/ellie-03.jpg" alt="Ellie"></div>
+          <div class="roulette-item"><img src="img/gaming/ciri/ciri-03.jpg" alt="Ciri"></div>
+          <div class="roulette-item"><img src="img/gaming/clementine/clementine-03.jpg" alt="Clementine"></div>
+          <div class="roulette-item"><img src="img/gaming/kiriko/kiriko-04.jpg" alt="Kiriko"></div>
+          <div class="roulette-item"><img src="img/gaming/jill-valentine/jill-valentine-04.jpg" alt="Jill Valentine"></div>
+          <div class="roulette-item"><img src="img/gaming/ellie/ellie-04.jpg" alt="Ellie"></div>
+          <div class="roulette-item"><img src="img/gaming/ciri/ciri-04.jpg" alt="Ciri"></div>
+        </div>
+      </div>
+
+      <div class="roulette-caption-bar">
+        <p>CHARACTER DESIGN &amp; MECHANICS — IMMERSIVE WORLDS &amp; PLAYABLE ICONS</p>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         BLOQUE 3: MANIFIESTO PRE-SLIDES (RODILLO 05 / C)
+    ================================================================== -->
+    <section class="manifesto-section">
+      <div class="manifesto-grid">
+        <div class="manifesto-monogram-wrap">
+          <div class="mono-box mono-box-small">
+            <div class="mono-roller roller-up">
+              <span>0</span><span>5</span><span>0</span>
+            </div>
+          </div>
+          <div class="mono-box mono-box-main">
+            <div class="mono-roller roller-main">
+              <span>05</span><span>C</span><span>05</span>
+            </div>
+          </div>
+          <div class="mono-box mono-box-right">
+            <div class="mono-roller roller-down">
+              <span>5</span><span>C</span><span>0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="manifesto-text-wrap">
+          <p class="manifesto-paragraph">
+            What makes a character unforgettable is the harmony between silhouette, personality, and control: the audio cue of a teleport, a last-second dodge, or a quiet moment in the middle of chaos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         BLOQUE 4: LOS 5 PERSONAJES APILADOS CON SCROLLTRIGGER
+    ================================================================== -->
+    <section class="expertise-pin-section" id="expertiseSection">
+      <div class="expertise-slides-wrapper">
+
+        <!-- SLIDE 01: Kiriko -->
+        <article class="exp-slide slide-1" style="--bg-color: #7c8f7f;">
+          <h2 class="exp-main-heading">Gaming</h2>
+          <div class="exp-content-grid">
+            <div class="exp-left">
+              <span class="exp-num">01</span>
+              <h3 class="exp-title">Kiriko</h3>
+            </div>
+            <div class="exp-center">
+              <div class="exp-img-container">
+                <img src="img/gaming/kiriko/kiriko-01.jpg" alt="01 Kiriko" />
+              </div>
+            </div>
+            <div class="exp-right">
+              <ul class="exp-tags">
+                <li>/ OVERWATCH 2</li>
+                <li>/ SUPPORT HERO</li>
+                <li>/ KANEZAKA DEFENDER</li>
+                <li>/ KUNAI &amp; PROTECTION SUZU</li>
+                <li>/ KITSUNE RUSH</li>
+              </ul>
+              <a href="character.html?id=kiriko" class="see-projects-btn">
+                <span class="see-projects-btn__text">CHARACTER BIO</span>
+                <span class="see-projects-btn__dot-wrap">
+                  <span class="see-projects-btn__dot"></span>
+                  <span class="see-projects-btn__arrow">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path class="arrow-stem" pathLength="1" d="M6 18 L18 6" />
+                      <path class="arrow-head" pathLength="1" d="M8 6 H18 V16" />
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 02: Jill Valentine -->
+        <article class="exp-slide slide-2" style="--bg-color: #c1ccd7;">
+          <h2 class="exp-main-heading">Gaming</h2>
+          <div class="exp-content-grid">
+            <div class="exp-left">
+              <span class="exp-num">02</span>
+              <h3 class="exp-title">Jill Valentine</h3>
+            </div>
+            <div class="exp-center">
+              <div class="exp-img-container">
+                <img src="img/gaming/jill-valentine/jill-valentine-01.jpg" alt="02 Jill Valentine" />
+              </div>
+            </div>
+            <div class="exp-right">
+              <ul class="exp-tags">
+                <li>/ RESIDENT EVIL</li>
+                <li>/ SURVIVAL HORROR</li>
+                <li>/ S.T.A.R.S. ALPHA TEAM</li>
+                <li>/ SAMURAI EDGE</li>
+                <li>/ PERFECT DODGE</li>
+              </ul>
+              <a href="character.html?id=jill-valentine" class="see-projects-btn">
+                <span class="see-projects-btn__text">CHARACTER BIO</span>
+                <span class="see-projects-btn__dot-wrap">
+                  <span class="see-projects-btn__dot"></span>
+                  <span class="see-projects-btn__arrow">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path class="arrow-stem" pathLength="1" d="M6 18 L18 6" />
+                      <path class="arrow-head" pathLength="1" d="M8 6 H18 V16" />
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 03: Ellie -->
+        <article class="exp-slide slide-3" style="--bg-color: #b597a3;">
+          <h2 class="exp-main-heading">Gaming</h2>
+          <div class="exp-content-grid">
+            <div class="exp-left">
+              <span class="exp-num">03</span>
+              <h3 class="exp-title">Ellie</h3>
+            </div>
+            <div class="exp-center">
+              <div class="exp-img-container">
+                <img src="img/gaming/ellie/ellie-01.jpg" alt="03 Ellie" />
+              </div>
+            </div>
+            <div class="exp-right">
+              <ul class="exp-tags">
+                <li>/ THE LAST OF US</li>
+                <li>/ STEALTH &amp; SURVIVAL</li>
+                <li>/ SWITCHBLADE &amp; BOW</li>
+                <li>/ GUERRILLA TACTICS</li>
+                <li>/ IMMUNE SURVIVOR</li>
+              </ul>
+              <a href="character.html?id=ellie" class="see-projects-btn">
+                <span class="see-projects-btn__text">CHARACTER BIO</span>
+                <span class="see-projects-btn__dot-wrap">
+                  <span class="see-projects-btn__dot"></span>
+                  <span class="see-projects-btn__arrow">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path class="arrow-stem" pathLength="1" d="M6 18 L18 6" />
+                      <path class="arrow-head" pathLength="1" d="M8 6 H18 V16" />
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 04: Ciri -->
+        <article class="exp-slide slide-4" style="--bg-color: #f4eee9;">
+          <h2 class="exp-main-heading">Gaming</h2>
+          <div class="exp-content-grid">
+            <div class="exp-left">
+              <span class="exp-num">04</span>
+              <h3 class="exp-title">Ciri</h3>
+            </div>
+            <div class="exp-center">
+              <div class="exp-img-container">
+                <img src="img/gaming/ciri/ciri-01.jpg" alt="04 Ciri" />
+              </div>
+            </div>
+            <div class="exp-right">
+              <ul class="exp-tags">
+                <li>/ THE WITCHER 3</li>
+                <li>/ LADY OF SPACE &amp; TIME</li>
+                <li>/ ZIREAEL SILVER SWORD</li>
+                <li>/ ELDER BLOOD BLINK</li>
+                <li>/ KAER MORHEN TRAINED</li>
+              </ul>
+              <a href="character.html?id=ciri" class="see-projects-btn">
+                <span class="see-projects-btn__text">CHARACTER BIO</span>
+                <span class="see-projects-btn__dot-wrap">
+                  <span class="see-projects-btn__dot"></span>
+                  <span class="see-projects-btn__arrow">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path class="arrow-stem" pathLength="1" d="M6 18 L18 6" />
+                      <path class="arrow-head" pathLength="1" d="M8 6 H18 V16" />
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 05: Clementine -->
+        <article class="exp-slide slide-5" style="--bg-color: #d97843;">
+          <h2 class="exp-main-heading">Gaming</h2>
+          <div class="exp-content-grid">
+            <div class="exp-left">
+              <span class="exp-num">05</span>
+              <h3 class="exp-title">Clementine</h3>
+            </div>
+            <div class="exp-center">
+              <div class="exp-img-container">
+                <img src="img/gaming/clementine/clementine-01.jpg" alt="05 Clementine" />
+              </div>
+            </div>
+            <div class="exp-right">
+              <ul class="exp-tags">
+                <li>/ THE WALKING DEAD</li>
+                <li>/ NARRATIVE SURVIVAL</li>
+                <li>/ HARDENED LEADER</li>
+                <li>/ KNEE-CAP TECHNIQUE</li>
+                <li>/ STILL NOT BITTEN</li>
+              </ul>
+              <a href="character.html?id=clementine" class="see-projects-btn">
+                <span class="see-projects-btn__text">CHARACTER BIO</span>
+                <span class="see-projects-btn__dot-wrap">
+                  <span class="see-projects-btn__dot"></span>
+                  <span class="see-projects-btn__arrow">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path class="arrow-stem" pathLength="1" d="M6 18 L18 6" />
+                      <path class="arrow-head" pathLength="1" d="M8 6 H18 V16" />
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =================================================================
+         FOOTER MAESTRO (usa las reglas de style.css + transitions.css)
+    ================================================================== -->
+    <footer class="contact-section contact-section--static" id="siteFooter">
+      <div class="contact-scroll-track">
+        <div class="contact-bottom">
+
+          <div class="contact-info-bar">
+            <div class="contact-col contact-col--location">
+              <p class="contact-location-line">CELONOR</p>
+              <p class="contact-location-line">C.A.B.A.</p>
+              <p class="contact-location-line">Buenos Aires, Argentina</p>
+            </div>
+
+            <div class="contact-col contact-col--direct">
+              <a href="mailto:marcelo.orozco.toledo@gmail.com" class="contact-direct-link">
+                marcelo.orozco.toledo@gmail.com
+              </a>
+              <a href="tel:+541131991066" class="contact-direct-link contact-direct-link--phone">
+                +54 11 3199-1066
+              </a>
+            </div>
+
+            <div class="contact-col contact-col--socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">INSTAGRAM</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LINKEDIN</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">TWITTER</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">GITHUB</a>
+            </div>
+
+            <div class="contact-col contact-col--legal">
+              <a href="#legal-notice" class="contact-legal-text contact-legal-link">LEGAL NOTICE</a>
+              <span class="contact-legal-text contact-legal-text--copy">CELONOR © 2026</span>
+            </div>
+          </div>
+
+          <div class="contact-giant-logo-wrap">
+            <div class="contact-giant-logo" aria-label="CELONOR">
+              <span>CELONOR</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script/transitions.js"></script>
+  <script src="script/gaming.js"></script>
+</body>
+</html>

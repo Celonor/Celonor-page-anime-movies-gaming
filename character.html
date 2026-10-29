@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Bio — CELONOR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/character.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+</head>
+<body data-page="character" data-cx-menu>
+
+  <div class="cx-arrival" id="pageCurtain" aria-hidden="true">
+    <div class="cx-logo" aria-hidden="true">
+      <span class="cx-char">C</span><span class="cx-char">E</span><span class="cx-char">L</span><span class="cx-char">O</span><span class="cx-char">N</span><span class="cx-char">O</span><span class="cx-char">R</span>
+    </div>
+  </div>
+
+  <a href="index.html" class="fixed-small-logo" id="smallAkaruLogo" aria-label="Back to home">
+    <span class="small-char">C</span>
+    <span class="small-char">E</span>
+    <span class="small-char">L</span>
+    <span class="small-char">O</span>
+    <span class="small-char">N</span>
+    <span class="small-char">O</span>
+    <span class="small-char">R</span>
+  </a>
+
+  <button class="menu-pill" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+    <span class="menu-pill__text" id="menuText">MENU</span>
+    <span class="menu-pill__circle" id="menuCircle">
+      <span class="hamburger" id="pillHamburger">
+        <span></span>
+        <span></span>
+      </span>
+    </span>
+  </button>
+
+  <aside class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <header class="menu-overlay__header">
+      <div class="menu-overlay__top-right">
+        <div class="menu-lang-pill" role="group" aria-label="Language">
+          <button type="button" class="menu-lang-btn" data-lang="fr">FR</button>
+          <span class="menu-lang-divider" aria-hidden="true">/</span>
+          <button type="button" class="menu-lang-btn is-active" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-overlay__content">
+      <nav class="menu-nav" aria-label="Main navigation">
+        <div class="menu-nav__mask">
+          <a href="projects.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Projects</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="gaming.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Gaming</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="waifus.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Waifus</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="contact.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Contact</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="menu-info-grid">
+        <div class="menu-info-block" data-menu-stagger>
+          <div class="menu-info-location">
+            <p class="menu-info-location__line">C.A.B.A.</p>
+            <p class="menu-info-location__line">BUENOS AIRES</p>
+            <p class="menu-info-location__line">ARGENTINA</p>
+          </div>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <ul class="menu-info-socials">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">INSTAGRAM</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">LINKEDIN</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">TWITTER</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">GITHUB</a></li>
+          </ul>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="mailto:marcelo.orozco.toledo@gmail.com" class="menu-info-link menu-info-link--email">
+            marcelo.orozco.toledo@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="char-main" id="charMain">
+    <section class="char-hero">
+      <div class="char-hero__top">
+        <div class="char-hero__meta">
+          <a href="gaming.html" class="char-back-link">
+            <span class="char-back-link__arrow">←</span>
+            <span>BACK TO GAMING</span>
+          </a>
+          <div class="char-hero__badges">
+            <span class="char-badge-game" id="charGame">OVERWATCH 2</span>
+            <span class="char-badge-role" id="charRole">SUPPORT</span>
+            <span class="char-badge-index" id="charIndex">#01</span>
+          </div>
+        </div>
+        <div class="char-hero__title-wrap">
+          <h1 class="char-hero__title" id="charTitle">Kiriko</h1>
+        </div>
+      </div>
+
+      <div class="char-hero__media">
+        <div class="char-hero__img-frame">
+          <img src="" alt="Character main visual" class="char-hero__img" id="charImg1" />
+        </div>
+      </div>
+    </section>
+
+    <section class="char-editorial">
+      <div class="char-editorial__grid">
+        <aside class="char-profile">
+          <div class="char-profile__sticky">
+            <span class="char-section-tag">CHARACTER PROFILE</span>
+            <dl class="char-profile__list" id="charProfileList"></dl>
+          </div>
+        </aside>
+
+        <div class="char-lore">
+          <div class="char-text-block">
+            <span class="char-section-tag">01 / LORE & BACKGROUND</span>
+            <h2 class="char-text-block__heading">Origins & Narrative</h2>
+            <p class="char-text-block__paragraph" id="charLoreText"></p>
+          </div>
+          <figure class="char-figure-secondary">
+            <div class="char-figure-secondary__mask">
+              <img src="" alt="Character lore visual" class="char-figure-secondary__img" id="charImg2" />
+            </div>
+            <figcaption class="char-figure-secondary__caption">
+              <span id="charCaption2">ARCHIVE VISUAL — 02</span>
+              <span>CHARACTER LORE</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="char-process">
+      <div class="char-process__header">
+        <span class="char-section-tag">02 / COMBAT KIT & PLAYSTYLE</span>
+        <h2 class="char-process__title">Mechanics & Visual Design</h2>
+      </div>
+
+      <div class="char-process__body">
+        <div class="char-process__text-wrap">
+          <p class="char-process__paragraph" id="charPlaystyleText"></p>
+        </div>
+
+        <div class="char-process__dual-gallery">
+          <figure class="char-card-visual char-card-visual--large">
+            <div class="char-card-visual__frame">
+              <img src="" alt="Character study 3" class="char-card-visual__img" id="charImg3" />
+            </div>
+            <figcaption class="char-card-visual__meta">
+              <span>ARCHIVE STUDY 03</span>
+              <span id="charWorkCode3">CH—01/03</span>
+            </figcaption>
+          </figure>
+
+          <figure class="char-card-visual char-card-visual--offset">
+            <div class="char-card-visual__frame">
+              <img src="" alt="Character study 4" class="char-card-visual__img" id="charImg4" />
+            </div>
+            <figcaption class="char-card-visual__meta">
+              <span>ARCHIVE STUDY 04</span>
+              <span id="charWorkCode4">CH—01/04</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="char-showcase" id="charShowcaseSection">
+      <div class="char-showcase__pin" id="charShowcasePin">
+        <div class="char-showcase__track" id="charShowcaseTrack">
+          <!-- Panel 1: Imagen 5 del personaje actual -->
+          <article class="showcase-panel showcase-panel--hero">
+            <div class="showcase-panel__media">
+              <img src="" alt="Showcase 5" class="showcase-panel__img" id="charImg5" />
+              <h3 class="showcase-panel__giant-title" id="showcaseTitle1">CHARACTER</h3>
+            </div>
+          </article>
+
+          <!-- Panel 2: Imagen 1 con etiqueta general sin "+" -->
+          <article class="showcase-panel showcase-panel--card">
+            <div class="showcase-panel__inner">
+              <div class="showcase-panel__thumb">
+                <img src="" alt="Thumb 1" id="showcaseThumb1" />
+              </div>
+              <div class="showcase-panel__label">
+                <span>ARCHIVE // 01</span>
+                <span id="showcaseTagGame">GAME</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Panel 3: Imagen 2 con título general en vez de GAMEPLAY -->
+          <article class="showcase-panel showcase-panel--hero">
+            <div class="showcase-panel__media">
+              <img src="" alt="Thumb 2" class="showcase-panel__img" id="showcaseThumb2" />
+              <h3 class="showcase-panel__giant-title" id="showcaseTitle2">VISUAL IDENTITY</h3>
+            </div>
+          </article>
+
+          <!-- Panel 4: Imagen 3 con etiqueta general en vez de + ACTION SHOT -->
+          <article class="showcase-panel showcase-panel--card">
+            <div class="showcase-panel__inner">
+              <div class="showcase-panel__thumb">
+                <img src="" alt="Thumb 3" id="showcaseThumb3" />
+              </div>
+              <div class="showcase-panel__label">
+                <span>ARCHIVE // 02</span>
+                <span id="showcaseRoleLabel">ROLE</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Panel 5: Imagen principal (-01.jpg) del SIGUIENTE personaje -->
+          <article class="showcase-panel showcase-panel--hero">
+            <a href="#next" class="showcase-panel__media showcase-panel__next-link" id="nextCharLink">
+              <img src="" alt="Next Character Preview" class="showcase-panel__img" id="showcaseThumb4" />
+              <h3 class="showcase-panel__giant-title" id="showcaseNextTitle">NEXT CHARACTER →</h3>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="scroll-outro" id="scrollOutro">
+    <div class="projects-scroll-bar" id="projectsScrollBar">
+      <span class="projects-scroll-bar__hint">SCROLL DOWN</span>
+      <a href="gaming.html" class="projects-scroll-bar__center" id="projectsCenterLink">
+        <span class="projects-scroll-bar__word">Gaming</span>
+        <sup class="projects-scroll-bar__count" id="projectsScrollCount">0</sup>
+      </a>
+      <span class="projects-scroll-bar__hint">SCROLL DOWN</span>
+    </div>
+
+    <footer class="footer-inverted" id="charFooter">
+      <div class="footer-inverted__top">
+        <div class="footer-col">
+          <a href="https://maps.google.com/?q=C.A.B.A.,+Buenos+Aires,+Argentina" target="_blank" rel="noopener noreferrer" class="footer-interactive">
+            <span class="footer-line">CELONOR</span>
+            <span class="footer-line">C.A.B.A.</span>
+            <span class="footer-line">BUENOS AIRES, ARGENTINA</span>
+          </a>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <div class="footer-group">
+            <a href="mailto:marcelo.orozco.toledo@gmail.com" class="footer-interactive">marcelo.orozco.toledo@gmail.com</a>
+          </div>
+          <div class="footer-group footer-group--phone">
+            <a href="tel:+541131991066" class="footer-interactive">+54 11 3199-1066</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <ul class="footer-social-list">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">INSTAGRAM</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">LINKEDIN</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">TWITTER</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">GITHUB</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col--legal">
+          <a href="#legal-notice" class="footer-interactive">LEGAL NOTICE</a>
+          <span class="footer-copyright">CELONOR © 2026</span>
+        </div>
+      </div>
+      <div class="footer-inverted__divider" role="separator"></div>
+      <div class="footer-inverted__monumental" aria-hidden="true">
+        <div class="footer-inverted__giant-text" id="footerGiantWord">
+          <span>C</span><span>E</span><span>L</span><span>O</span><span>N</span><span>O</span><span>R</span>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script/transitions.js"></script>
+  <script src="script/character.js"></script>
+</body>
+</html>

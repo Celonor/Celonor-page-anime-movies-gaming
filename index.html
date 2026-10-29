@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celonor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    try {
+      if (sessionStorage.getItem("celonorNav") === "from-projects") {
+        document.documentElement.classList.add("from-projects");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="preloader" id="preloader" aria-label="Loading Celonor">
+    <div class="preloader__mask">
+      <div class="preloader__logo" id="preloaderLogo" aria-hidden="true">
+        <span class="preloader-char">C</span>
+        <span class="preloader-char">E</span>
+        <span class="preloader-char">L</span>
+        <span class="preloader-char">O</span>
+        <span class="preloader-char">N</span>
+        <span class="preloader-char">O</span>
+        <span class="preloader-char">R</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#top" class="fixed-small-logo" id="smallAkaruLogo" aria-label="Back to home">
+    <span class="small-char">C</span>
+    <span class="small-char">E</span>
+    <span class="small-char">L</span>
+    <span class="small-char">O</span>
+    <span class="small-char">N</span>
+    <span class="small-char">O</span>
+    <span class="small-char">R</span>
+  </a>
+
+  <button class="menu-pill" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+    <span class="menu-pill__text" id="menuText">MENU</span>
+    <span class="menu-pill__circle" id="menuCircle">
+      <span class="hamburger" id="pillHamburger">
+        <span></span>
+        <span></span>
+      </span>
+    </span>
+  </button>
+
+  <aside class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <header class="menu-overlay__header">
+      <div class="menu-overlay__top-right">
+        <div class="menu-lang-pill" role="group" aria-label="Language selector">
+          <button type="button" class="menu-lang-btn" data-lang="fr">FR</button>
+          <span class="menu-lang-divider" aria-hidden="true">/</span>
+          <button type="button" class="menu-lang-btn is-active" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-overlay__content">
+      <nav class="menu-nav" aria-label="Main navigation">
+        <div class="menu-nav__mask">
+          <a href="projects.html" class="menu-nav__link" data-menu-target="projects">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Projects</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="gaming.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Gaming</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="waifus.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Waifus</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="contact.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Contact</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="menu-info-grid">
+        <div class="menu-info-block" data-menu-stagger>
+          <div class="menu-info-location">
+            <p class="menu-info-location__line">C.A.B.A.</p>
+            <p class="menu-info-location__line">BUENOS AIRES</p>
+            <p class="menu-info-location__line">ARGENTINA</p>
+          </div>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <ul class="menu-info-socials">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">INSTAGRAM</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">LINKEDIN</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">TWITTER</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">GITHUB</a></li>
+          </ul>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="mailto:marcelo.orozco.toledo@gmail.com" class="menu-info-link menu-info-link--email">
+            marcelo.orozco.toledo@gmail.com
+          </a>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="tel:+541131991066" class="menu-info-link menu-info-link--phone">
+            +54 11 3199-1066
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="menu-overlay__footer">
+      <div class="menu-overlay__card" id="menuFeatureCard">
+        <div class="menu-overlay__card-frame">
+          <img src="img/general/home.jpg" alt="Celonor Featured Work" class="menu-overlay__card-img" />
+        </div>
+      </div>
+      <div class="menu-overlay__giant-mask" aria-hidden="true">
+        <div class="menu-overlay__giant-logo" id="menuGiantLogo">
+          <span class="menu-giant-char">C</span>
+          <span class="menu-giant-char">E</span>
+          <span class="menu-giant-char">L</span>
+          <span class="menu-giant-char">O</span>
+          <span class="menu-giant-char">N</span>
+          <span class="menu-giant-char">O</span>
+          <span class="menu-giant-char">R</span>
+        </div>
+      </div>
+    </footer>
+  </aside>
+
+  <main class="main-wrapper" id="mainWrapper">
+    <div class="horizontal-track" id="horizontalTrack">
+
+      <!-- PANEL IZQUIERDO: Hero Fijo -->
+      <section class="hero-panel">
+        <nav class="navbar">
+          <a href="projects.html" class="nav-link">
+            <span class="nav-dot-wrap">
+              <span class="nav-dot-bg" style="--dot-color: #e67e51;"></span>
+              <span class="nav-arrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            </span>
+            <span class="nav-text">Projects</span>
+          </a>
+          <a href="gaming.html" class="nav-link">
+            <span class="nav-dot-wrap">
+              <span class="nav-dot-bg" style="--dot-color: #849687;"></span>
+              <span class="nav-arrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            </span>
+            <span class="nav-text">Gaming</span>
+          </a>
+          <a href="waifus.html" class="nav-link">
+            <span class="nav-dot-wrap">
+              <span class="nav-dot-bg" style="--dot-color: #b597a3;"></span>
+              <span class="nav-arrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            </span>
+            <span class="nav-text">Waifus</span>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <span class="nav-dot-wrap">
+              <span class="nav-dot-bg" style="--dot-color: #c1ccd7;"></span>
+              <span class="nav-arrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            </span>
+            <span class="nav-text">Contact</span>
+          </a>
+        </nav>
+
+        <div class="hero-center">
+          <div class="hero-giant-logo" aria-label="CELONOR">
+            <span>C</span><span>E</span><span>L</span><span>O</span><span>N</span><span>O</span><span>R</span>
+          </div>
+          <p class="hero-description">
+            An interactive archive blending pop culture, gaming, and animation. Showcasing fluid frontend development, motion choreography, and contemporary web architecture.
+          </p>
+        </div>
+
+        <footer class="hero-socials">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">INSTAGRAM</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link">LINKEDIN</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link">TWITTER</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link">GITHUB</a>
+        </footer>
+      </section>
+
+      <!-- SECCIÓN DERECHA: Track de Proyectos -->
+      <section class="projects-track">
+
+        <!-- PROYECTO 01: Megumin -->
+        <article class="project-card card--1" style="--card-bg: #c1ccd7;">
+          <div class="project-card__image-wrap" data-href="waifus.html" style="cursor: pointer;">
+            <img src="img/characters/megumin.jpg" alt="Megumin" class="project-card__img" />
+          </div>
+          <div class="project-card__content">
+            <div class="project-card__meta">
+              <div class="meta-mask meta-mask--left"><span class="meta-item meta-year">2016</span></div>
+              <div class="meta-mask meta-mask--center"><span class="meta-item meta-type">WAIFUS / ANIME ICON</span></div>
+              <div class="meta-mask meta-mask--right"><span class="meta-item meta-role">ARCHMAGE OF THE CRIMSON MAGIC CLAN</span></div>
+            </div>
+            <div class="title-mask">
+              <h2 class="project-card__title" data-split="chars">Megumin</h2>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__index">01</span>
+            <a href="waifus.html" class="project-card__btn" aria-label="View Megumin Profile">
+              <span class="btn-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 02: Jill Valentine -->
+        <article class="project-card card--2" style="--card-bg: #b597a3;">
+          <div class="project-card__image-wrap" data-href="character.html?id=jill-valentine" style="cursor: pointer;">
+            <img src="img/gaming/jill-valentine/jill-valentine-01.jpg" alt="Jill Valentine" class="project-card__img" />
+          </div>
+          <div class="project-card__content">
+            <div class="project-card__meta">
+              <div class="meta-mask meta-mask--left"><span class="meta-item meta-year">1996</span></div>
+              <div class="meta-mask meta-mask--center"><span class="meta-item meta-type">RESIDENT EVIL</span></div>
+              <div class="meta-mask meta-mask--right"><span class="meta-item meta-role">S.T.A.R.S. OPERATIVE</span></div>
+            </div>
+            <div class="title-mask">
+              <h2 class="project-card__title" data-split="chars">Jill Valentine</h2>
+            </div>
+          </div>
+          <div class="project-card__footer">
+            <span class="project-card__index">02</span>
+            <a href="character.html?id=jill-valentine" class="project-card__btn" aria-label="View Jill Valentine">
+              <span class="btn-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 03 (KIRIKO) + REEL VERTICAL IZQUIERDO -->
+        <article class="project-card card--3" id="kirikoCard" style="--card-bg: #7c8f7f;">
+          <div class="vertical-reel-track" id="verticalReelTrack">
+            
+            <div class="project-card__image-wrap" id="kirikoImgWrap" data-href="character.html?id=kiriko" style="cursor: pointer;">
+              <img src="img/gaming/kiriko/kiriko-01.jpg" alt="Kiriko" class="project-card__img" />
+            </div>
+
+            <!-- REEL VERTICAL -->
+            <div class="reel-items-group" id="reelItemsGroup">
+              
+              <a href="bio.html?id=a-silent-voice" class="reel-item" style="display:block">
+                <img src="img/media/a-silent-voice/a-silent-voice-01.jpg" alt="A Silent Voice" class="reel-item__img" />
+                <div class="reel-item__overlay">
+                  <div class="reel-item__top">
+                    <span class="reel-item__cat">ANIME FILM / DRAMA</span>
+                    <span class="reel-item__year">2016</span>
+                  </div>
+                  <div class="reel-item__bottom">
+                    <h3 class="reel-item__title">A Silent Voice</h3>
+                    <span class="reel-item__btn" aria-hidden="true"><span class="reel-item__arrow">↗</span></span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="bio.html?id=cyberpunk-edgerunners" class="reel-item" style="display:block">
+                <img src="img/media/cyberpunk-edgerunners/cyberpunk-edgerunners-01.jpg" alt="Cyberpunk Edgerunners" class="reel-item__img" />
+                <div class="reel-item__overlay">
+                  <div class="reel-item__top">
+                    <span class="reel-item__cat">MINISERIES / ACTION</span>
+                    <span class="reel-item__year">2022</span>
+                  </div>
+                  <div class="reel-item__bottom">
+                    <h3 class="reel-item__title">Cyberpunk: Edgerunners</h3>
+                    <span class="reel-item__btn" aria-hidden="true"><span class="reel-item__arrow">↗</span></span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="bio.html?id=frieren" class="reel-item" style="display:block">
+                <img src="img/media/frieren/frieren-01.jpg" alt="Frieren" class="reel-item__img" />
+                <div class="reel-item__overlay">
+                  <div class="reel-item__top">
+                    <span class="reel-item__cat">SERIES / FANTASY</span>
+                    <span class="reel-item__year">2023</span>
+                  </div>
+                  <div class="reel-item__bottom">
+                    <h3 class="reel-item__title">Frieren: Beyond Journey's End</h3>
+                    <span class="reel-item__btn" aria-hidden="true"><span class="reel-item__arrow">↗</span></span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="bio.html?id=look-back" class="reel-item" style="display:block">
+                <img src="img/media/look-back/look-back-01.jpg" alt="Look Back" class="reel-item__img" />
+                <div class="reel-item__overlay">
+                  <div class="reel-item__top">
+                    <span class="reel-item__cat">MOVIE / SHORT</span>
+                    <span class="reel-item__year">2024</span>
+                  </div>
+                  <div class="reel-item__bottom">
+                    <h3 class="reel-item__title">Look Back</h3>
+                    <span class="reel-item__btn" aria-hidden="true"><span class="reel-item__arrow">↗</span></span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="bio.html?id=scott-pilgrim-takes-off" class="reel-item" style="display:block">
+                <img src="img/media/scott-pilgrim-takes-off/scott-pilgrim-takes-off-01.jpg" alt="Scott Pilgrim Takes Off" class="reel-item__img" />
+                <div class="reel-item__overlay">
+                  <div class="reel-item__top">
+                    <span class="reel-item__cat">SHORT FILMS / COMEDY</span>
+                    <span class="reel-item__year">2023</span>
+                  </div>
+                  <div class="reel-item__bottom">
+                    <h3 class="reel-item__title">Scott Pilgrim Takes Off</h3>
+                    <span class="reel-item__btn" aria-hidden="true"><span class="reel-item__arrow">↗</span></span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="bio.html?id=chainsaw-man" class="reel-item" style="display:block">
+                <img src="img/media/chainsaw-man/chainsaw-man-01.jpg" alt="Chainsaw Man" class="reel-item__img" />
+                <div class="reel-item__overlay">
+                  <div class="reel-item__top">
+                    <span class="reel-item__cat">SERIES / DARK FANTASY</span>
+                    <span class="reel-item__year">2022</span>
+                  </div>
+                  <div class="reel-item__bottom">
+                    <h3 class="reel-item__title">Chainsaw Man</h3>
+                    <span class="reel-item__btn" aria-hidden="true"><span class="reel-item__arrow">↗</span></span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="bio.html?id=suzume" class="reel-item" style="display:block">
+                <img src="img/media/suzume/suzume-01.jpg" alt="Suzume" class="reel-item__img" />
+                <div class="reel-item__overlay">
+                  <div class="reel-item__top">
+                    <span class="reel-item__cat">MOVIE / ADVENTURE</span>
+                    <span class="reel-item__year">2022</span>
+                  </div>
+                  <div class="reel-item__bottom">
+                    <h3 class="reel-item__title">Suzume</h3>
+                    <span class="reel-item__btn" aria-hidden="true"><span class="reel-item__arrow">↗</span></span>
+                  </div>
+                </div>
+              </a>
+
+              <div class="reel-cta-block">
+                <a href="projects.html" class="see-projects-btn">
+                  <span class="see-projects-btn__text">EXPLORE ARCHIVE</span>
+                  <span class="see-projects-btn__dot-wrap">
+                    <span class="see-projects-btn__dot"></span>
+                    <span class="see-projects-btn__arrow">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card__content">
+            <div class="project-card__meta">
+              <div class="meta-mask meta-mask--left"><span class="meta-item meta-year">2022</span></div>
+              <div class="meta-mask meta-mask--center"><span class="meta-item meta-type">SUPPORT HERO</span></div>
+              <div class="meta-mask meta-mask--right"><span class="meta-item meta-role">KITSUNE HEALER &amp; KANEOZAKA DEFENDER</span></div>
+            </div>
+            <div class="title-mask">
+              <h2 class="project-card__title" data-split="chars">Kiriko</h2>
+            </div>
+          </div>
+
+          <div class="project-card__footer" id="kirikoFooter">
+            <span class="project-card__index">03</span>
+            <a href="character.html?id=kiriko" class="project-card__btn" aria-label="View Kiriko Bio">
+              <span class="btn-arrow">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PANEL EDITORIAL DERECHO FIJO -->
+        <section class="projects-editorial-panel" id="projectsEditorialPanel">
+          <div class="editorial-title-mask">
+            <h2 class="editorial-title" id="editorialProjectsTitle" data-split="chars">Archive</h2>
+          </div>
+          <div class="editorial-lines">
+            <div class="editorial-row">
+              <span class="editorial-line"></span>
+              <div class="editorial-row__inner">
+                <div class="editorial-mask"><span class="editorial-num">00</span></div>
+                <div class="editorial-mask"><span class="editorial-cat">CINEMATIC ARCHIVE &amp; FILM CURATION</span></div>
+              </div>
+            </div>
+            <div class="editorial-row">
+              <span class="editorial-line"></span>
+              <div class="editorial-row__inner">
+                <div class="editorial-mask"><span class="editorial-num">01</span></div>
+                <div class="editorial-mask"><span class="editorial-cat">MOTION DESIGN &amp; GSAP ANIMATIONS</span></div>
+              </div>
+            </div>
+            <div class="editorial-row">
+              <span class="editorial-line"></span>
+              <div class="editorial-row__inner">
+                <div class="editorial-mask"><span class="editorial-num">02</span></div>
+                <div class="editorial-mask"><span class="editorial-cat">FRONTEND ARCHITECTURE &amp; CREATIVE CODE</span></div>
+              </div>
+            </div>
+            <div class="editorial-row">
+              <span class="editorial-line"></span>
+              <div class="editorial-row__inner">
+                <div class="editorial-mask"><span class="editorial-num">03</span></div>
+                <div class="editorial-mask"><span class="editorial-cat">VISUAL PACING &amp; SCROLL EXPERIENCES</span></div>
+              </div>
+            </div>
+            <div class="editorial-row editorial-row--closing">
+              <span class="editorial-line"></span>
+              <div class="editorial-row__inner">
+                <div class="editorial-mask"><span class="editorial-num">04</span></div>
+                <div class="editorial-mask"><span class="editorial-cat">INTERACTIVE DIGITAL SHOWCASE</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="editorial-paragraph-mask">
+            <p class="editorial-paragraph" id="editorialParagraph">
+              A curated digital showcase blending cinematic storytelling with creative frontend development. Exploring smooth interactions, visual pacing, and immersive motion design to build memorable web experiences.
+            </p>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <!-- 4. SECCIÓN "INDUSTRY AWARDS" -->
+    <section class="black-section-cover awards-section" id="awardsSection">
+      <div class="awards-scroll-track" id="awardsScrollTrack">
+        <div class="awards-hero" id="awardsHero">
+          <div class="awards-hero__col awards-hero__col--left">
+            <div class="awards-reveal-mask">
+              <h2 class="awards-title" data-awards-reveal>Industry<br>Awards</h2>
+            </div>
+            <div class="awards-hero__left-bottom">
+              <div class="awards-reveal-mask">
+                <p class="awards-desc" data-awards-reveal>
+                  A curation of masterclasses in modern animation, storytelling, and sound design. Highlighting the landmark productions and creators that continue to define the medium worldwide.
+                </p>
+              </div>
+              <div class="awards-reveal-mask awards-reveal-mask--btn">
+                <a href="projects.html" class="explore-all-btn" data-awards-reveal>
+                  <span class="explore-all-btn__text">EXPLORE ALL</span>
+                  <span class="explore-all-btn__dot-wrap">
+                    <span class="explore-all-btn__dot"></span>
+                    <span class="explore-all-btn__arrow">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="awards-hero__col awards-hero__col--center">
+            <div class="awards-hero__image-wrap" id="awardsHeroImageWrap">
+              <img src="img/general/awards.jpg" alt="Industry Awards" class="awards-hero__img" id="awardsHeroImg" />
+            </div>
+          </div>
+          <div class="awards-hero__col awards-hero__col--right">
+            <div class="awards-stats">
+              <div class="awards-reveal-mask">
+                <div class="awards-stat" data-awards-reveal>
+                  <span class="awards-stat__num">10</span>
+                  <span class="awards-stat__label">ANIMATION &amp; ART</span>
+                </div>
+              </div>
+              <div class="awards-reveal-mask">
+                <div class="awards-stat" data-awards-reveal>
+                  <span class="awards-stat__num">8</span>
+                  <span class="awards-stat__label">ORIGINAL SOUND</span>
+                </div>
+              </div>
+            </div>
+            <div class="awards-reveal-mask">
+              <p class="awards-desc awards-desc--right" data-awards-reveal>
+                Recognizing creative excellence across global releases, celebrating standout directors, composers, and animation studios shaping contemporary visual culture.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="awards-lists-wrapper">
+          <section class="awards-list-stage" id="awardsListStage1">
+            <div class="awards-list awards-list--right" id="awardsList1">
+              <header class="awards-list__header">
+                <span class="awards-list__count">(10)</span>
+                <span class="awards-list__title">ANIMATION &amp; ART</span>
+              </header>
+              <div class="awards-list__rows">
+                <article class="award-row">
+                  <span class="award-row__cat">ANIME OF THE YEAR</span>
+                  <span class="award-row__work">JUJUTSU KAISEN SEASON 2</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST ANIMATION</span>
+                  <span class="award-row__work">DEMON SLAYER: ENTERTAINMENT DISTRICT ARC</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST ART DIRECTION</span>
+                  <span class="award-row__work">DEMON SLAYER: SWORDSMITH VILLAGE ARC</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST CINEMATOGRAPHY</span>
+                  <span class="award-row__work">ATTACK ON TITAN FINAL SEASON</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST DIRECTOR</span>
+                  <span class="award-row__work">SHOTA GOSHOZONO (JUJUTSU KAISEN)</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST CHARACTER DESIGN</span>
+                  <span class="award-row__work">CHAINSAW MAN</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST FILM</span>
+                  <span class="award-row__work">SUZUME</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST ACTION</span>
+                  <span class="award-row__work">JUJUTSU KAISEN SEASON 2</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST FANTASY</span>
+                  <span class="award-row__work">DEMON SLAYER: KIMETSU NO YAIBA</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST SCI-FI</span>
+                  <span class="award-row__work">CYBERPUNK: EDGERUNNERS</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="awards-list-stage" id="awardsListStage2">
+            <div class="awards-list awards-list--left" id="awardsList2">
+              <header class="awards-list__header">
+                <span class="awards-list__count">(8)</span>
+                <span class="awards-list__title">ORIGINAL SOUND</span>
+              </header>
+              <div class="awards-list__rows">
+                <article class="award-row">
+                  <span class="award-row__cat">BEST SCORE</span>
+                  <span class="award-row__work">ATTACK ON TITAN FINAL SEASON</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST OPENING THEME</span>
+                  <span class="award-row__work">"WHERE OUR BLUE IS" — TATSUYA KITANI</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST ENDING THEME</span>
+                  <span class="award-row__work">"AKARI" — SOSHI SAKAIYAMA</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST ANIME SONG</span>
+                  <span class="award-row__work">"IDOL" — YOASOBI</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST SCORE</span>
+                  <span class="award-row__work">SUZUME (RADWIMPS)</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST OPENING THEME</span>
+                  <span class="award-row__work">"KICK BACK" — KENSHI YONEZU</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row">
+                  <span class="award-row__cat">BEST ORIGINAL SCORE</span>
+                  <span class="award-row__work">CYBERPUNK: EDGERUNNERS</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="award-row" id="lastAwardRow">
+                  <span class="award-row__cat">BEST ANIME SONG</span>
+                  <span class="award-row__work">"GURENGE" — LISA</span>
+                  <span class="award-row__arrow" aria-hidden="true">↗</span>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SECCIÓN "GAMING" -->
+    <section class="expertise-section" id="expertiseSection">
+      <div class="expertise-persistent-ui">
+        <div class="expertise-title-mask">
+          <h2 class="expertise-main-title" id="expertiseMainTitle" data-split="chars">Gaming</h2>
+        </div>
+        
+        <div class="expertise-texts-stage">
+          <div class="expertise-text-item is-active" data-exp-text="0">
+            <div class="exp-mask"><h3 class="expertise-item__title">Kiriko</h3></div>
+            <div class="exp-mask">
+              <p class="expertise-item__tags">
+                / OVERWATCH 2 &nbsp;&nbsp; / SUPPORT HERO<br>
+                / HEALING OFUDA &nbsp;&nbsp; / KUNAI<br>
+                / PROTECTION SUZU &nbsp;&nbsp; / NINJUTSU
+              </p>
+            </div>
+          </div>
+          <div class="expertise-text-item" data-exp-text="1">
+            <div class="exp-mask"><h3 class="expertise-item__title">Jill Valentine</h3></div>
+            <div class="exp-mask">
+              <p class="expertise-item__tags">
+                / RESIDENT EVIL &nbsp;&nbsp; / SURVIVAL HORROR<br>
+                / S.T.A.R.S. OPERATIVE &nbsp;&nbsp; / LOCKPICKING<br>
+                / PERFECT DODGE &nbsp;&nbsp; / TACTICAL EXPERT
+              </p>
+            </div>
+          </div>
+          <div class="expertise-text-item" data-exp-text="2">
+            <div class="exp-mask"><h3 class="expertise-item__title">Ellie</h3></div>
+            <div class="exp-mask">
+              <p class="expertise-item__tags">
+                / THE LAST OF US &nbsp;&nbsp; / SURVIVAL STEALTH<br>
+                / SWITCHBLADE &nbsp;&nbsp; / BOW HUNTING<br>
+                / CRAFTING &nbsp;&nbsp; / GUERRILLA WARFARE
+              </p>
+            </div>
+          </div>
+          <div class="expertise-text-item" data-exp-text="3">
+            <div class="exp-mask"><h3 class="expertise-item__title">Ciri</h3></div>
+            <div class="exp-mask">
+              <p class="expertise-item__tags">
+                / THE WITCHER &nbsp;&nbsp; / LADY OF SPACE & TIME<br>
+                / ELDER BLOOD &nbsp;&nbsp; / ZIREAEL<br>
+                / BLINK STRIKES &nbsp;&nbsp; / WITCHER TRAINING
+              </p>
+            </div>
+          </div>
+          <div class="expertise-text-item" data-exp-text="4">
+            <div class="exp-mask"><h3 class="expertise-item__title">Clementine</h3></div>
+            <div class="exp-mask">
+              <p class="expertise-item__tags">
+                / THE WALKING DEAD &nbsp;&nbsp; / NARRATIVE ADVENTURE<br>
+                / SURVIVOR & LEADER &nbsp;&nbsp; / KNEE-CAP STUN<br>
+                / RESOURCEFUL &nbsp;&nbsp; / ADAPTIVE COMBAT
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="expertise-cta-fixed">
+          <a href="gaming.html" class="see-projects-btn expertise-pill-btn">
+            <span class="see-projects-btn__text">EXPLORE GAMING</span>
+            <span class="see-projects-btn__dot-wrap">
+              <span class="see-projects-btn__dot"></span>
+              <span class="see-projects-btn__arrow">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg>
+              </span>
+            </span>
+          </a>
+        </div>
+
+        <div class="expertise-progress">
+          <div class="expertise-progress__steps">
+            <div class="exp-step is-active" data-exp-step="0">
+              <span class="exp-step__num">01</span>
+              <span class="exp-step__label-mask"><span class="exp-step__label">KIRIKO</span></span>
+            </div>
+            <div class="exp-step" data-exp-step="1">
+              <span class="exp-step__num">02</span>
+              <span class="exp-step__label-mask"><span class="exp-step__label">JILL VALENTINE</span></span>
+            </div>
+            <div class="exp-step" data-exp-step="2">
+              <span class="exp-step__num">03</span>
+              <span class="exp-step__label-mask"><span class="exp-step__label">ELLIE</span></span>
+            </div>
+            <div class="exp-step" data-exp-step="3">
+              <span class="exp-step__num">04</span>
+              <span class="exp-step__label-mask"><span class="exp-step__label">CIRI</span></span>
+            </div>
+            <div class="exp-step" data-exp-step="4">
+              <span class="exp-step__num">05</span>
+              <span class="exp-step__label-mask"><span class="exp-step__label">CLEMENTINE</span></span>
+            </div>
+          </div>
+          <div class="expertise-progress__track">
+            <div class="expertise-progress__bar" id="expertiseProgressBar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="expertise-slides-wrapper">
+        <article class="expertise-slide exp-slide--1" style="--exp-bg: #7c8f7f; z-index: 11;">
+          <div class="expertise-slide__img-wrap" data-href="character.html?id=kiriko" style="cursor: pointer;"><img src="img/gaming/kiriko/kiriko-01.jpg" alt="Kiriko" class="expertise-slide__img" /></div>
+        </article>
+        <article class="expertise-slide exp-slide--2" style="--exp-bg: #c1ccd7; z-index: 12;">
+          <div class="expertise-slide__img-wrap" data-href="character.html?id=jill-valentine" style="cursor: pointer;"><img src="img/gaming/jill-valentine/jill-valentine-01.jpg" alt="Jill Valentine" class="expertise-slide__img" /></div>
+        </article>
+        <article class="expertise-slide exp-slide--3" style="--exp-bg: #b597a3; z-index: 13;">
+          <div class="expertise-slide__img-wrap" data-href="character.html?id=ellie" style="cursor: pointer;"><img src="img/gaming/ellie/ellie-01.jpg" alt="Ellie" class="expertise-slide__img" /></div>
+        </article>
+        <article class="expertise-slide exp-slide--4" style="--exp-bg: #d97843; z-index: 14;">
+          <div class="expertise-slide__img-wrap" data-href="character.html?id=ciri" style="cursor: pointer;"><img src="img/gaming/ciri/ciri-01.jpg" alt="Ciri" class="expertise-slide__img" /></div>
+        </article>
+        <article class="expertise-slide exp-slide--5" style="--exp-bg: #e68a5c; z-index: 15;">
+          <div class="expertise-slide__img-wrap" data-href="character.html?id=clementine" style="cursor: pointer;"><img src="img/gaming/clementine/clementine-01.jpg" alt="Clementine" class="expertise-slide__img" /></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. SECCIÓN "ABOUT" -->
+    <section class="about-section" id="aboutSection">
+      <div class="about-scroll-track" id="aboutScrollTrack">
+        <header class="about-header">
+          <div class="about-header__left">
+            <div class="about-title-mask">
+              <h2 class="about-main-title" id="aboutMainTitle" data-split="chars">About</h2>
+            </div>
+          </div>
+          <div class="about-header__right">
+            <div class="about-reveal-mask">
+              <span class="about-kicker" data-about-reveal>CODE, MOTION & CULTURE — BUENOS AIRES</span>
+            </div>
+            <div class="about-reveal-mask">
+              <p class="about-lead" data-about-reveal>
+                Focused on crafting fluid, interactive web experiences where technical precision meets pop culture aesthetics. An archive built with clarity, rhythm, and an obsession for detail.
+              </p>
+            </div>
+            <div class="about-reveal-mask about-reveal-mask--btn">
+              <a href="waifus.html" class="see-projects-btn" data-about-reveal>
+                <span class="see-projects-btn__text">EXPLORE WAIFUS</span>
+                <span class="see-projects-btn__dot-wrap">
+                  <span class="see-projects-btn__dot"></span>
+                  <span class="see-projects-btn__arrow">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <div class="about-gallery-top">
+          <div class="about-img-box about-img-box--1"><img src="img/general/agency-1.jpg" alt="Studio Detail" class="about-img" /></div>
+          <div class="about-gallery-top__right">
+            <div class="about-img-box about-img-box--2"><img src="img/general/agency-2.jpg" alt="Studio Setup" class="about-img" /></div>
+            <div class="about-img-box about-img-box--3"><img src="img/general/agency-3.jpg" alt="Creative Space" class="about-img" /></div>
+          </div>
+        </div>
+
+        <div class="about-bottom-grid">
+          <div class="about-philosophy">
+            <article class="philosophy-row">
+              <h3 class="philosophy-row__title">WE LIKE TO KEEP THINGS<br>SIMPLE.</h3>
+              <p class="philosophy-row__desc">In an era of overloaded interfaces, clarity and purpose take precedence. Clean code and intentional motion always outperform needless complexity.</p>
+            </article>
+            <article class="philosophy-row">
+              <h3 class="philosophy-row__title">GO WITH COMMON SENSE.</h3>
+              <p class="philosophy-row__desc">Master modern tools and reactive patterns to build anything, but deploy only what makes the experience feel lighter, sharper, and frictionless.</p>
+            </article>
+            <article class="philosophy-row">
+              <h3 class="philosophy-row__title">USER FIRST,<br>ALWAYS.</h3>
+              <p class="philosophy-row__desc">Visual style sets the mood, but performance and accessibility define the real quality. The user's interaction is the final metric.</p>
+            </article>
+          </div>
+          <div class="about-bottom-right">
+            <div class="about-img-box about-img-box--4"><img src="img/general/agency-4.jpg" alt="Design detail" class="about-img" /></div>
+            <div class="about-years" aria-label="2023 a 2026">
+              <span class="about-years__top">2023</span>
+              <span class="about-years__bottom">/ 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SECCIÓN FINAL: FOOTER, CONTACTO Y LOGO COLOSAL -->
+    <footer class="contact-section" id="contactSection">
+      <div class="contact-scroll-track" id="contactScrollTrack">
+        <div class="contact-hero">
+          <div class="contact-reveal-mask">
+            <h2 class="contact-title" data-contact-reveal>
+              I challenge you to<br>challenge me.
+            </h2>
+          </div>
+          <div class="contact-reveal-mask contact-reveal-mask--btn">
+            <a href="contact.html" class="explore-all-btn contact-cta-btn" data-contact-reveal>
+              <span class="explore-all-btn__text">CONTACT US</span>
+              <span class="explore-all-btn__dot-wrap">
+                <span class="explore-all-btn__dot"></span>
+                <span class="explore-all-btn__arrow">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-bottom">
+          <div class="contact-info-bar">
+            <div class="contact-col contact-col--location">
+              <p class="contact-location-line">CELONOR</p>
+              <p class="contact-location-line">C.A.B.A.</p>
+              <p class="contact-location-line">Buenos Aires, Argentina</p>
+            </div>
+            <div class="contact-col contact-col--direct">
+              <a href="mailto:marcelo.orozco.toledo@gmail.com" class="contact-direct-link">marcelo.orozco.toledo@gmail.com</a>
+              <a href="tel:+541131991066" class="contact-direct-link contact-direct-link--phone">+54 11 3199-1066</a>
+            </div>
+            <div class="contact-col contact-col--socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">INSTAGRAM</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">LINKEDIN</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">TWITTER</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-social-link">GITHUB</a>
+            </div>
+            <div class="contact-col contact-col--legal">
+              <a href="#legal-notice" class="contact-legal-text contact-legal-link">LEGAL NOTICE</a>
+              <span class="contact-legal-text contact-legal-text--copy">CELONOR © 2026</span>
+            </div>
+          </div>
+          <div class="contact-giant-logo-wrap">
+            <div class="contact-giant-logo" id="contactGiantLogo" aria-label="CELONOR">
+              <span>CELONOR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive — CELONOR</title>
+
+  <!-- Google Fonts: Inter & Antonio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/bio.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+</head>
+<body data-page="bio" data-cx-menu>
+
+  <div class="cx-arrival" id="pageCurtain" aria-hidden="true">
+    <div class="cx-logo" aria-hidden="true">
+      <span class="cx-char">C</span><span class="cx-char">E</span><span class="cx-char">L</span><span class="cx-char">O</span><span class="cx-char">N</span><span class="cx-char">O</span><span class="cx-char">R</span>
+    </div>
+  </div>
+
+  <a href="index.html" class="fixed-small-logo" id="smallAkaruLogo" aria-label="Back to home">
+    <span class="small-char">C</span>
+    <span class="small-char">E</span>
+    <span class="small-char">L</span>
+    <span class="small-char">O</span>
+    <span class="small-char">N</span>
+    <span class="small-char">O</span>
+    <span class="small-char">R</span>
+  </a>
+
+  <button class="menu-pill" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+    <span class="menu-pill__text" id="menuText">MENU</span>
+    <span class="menu-pill__circle" id="menuCircle">
+      <span class="hamburger" id="pillHamburger">
+        <span></span>
+        <span></span>
+      </span>
+    </span>
+  </button>
+
+  <aside class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <header class="menu-overlay__header">
+      <div class="menu-overlay__top-right">
+        <div class="menu-lang-pill" role="group" aria-label="Language selector">
+          <button type="button" class="menu-lang-btn" data-lang="fr">FR</button>
+          <span class="menu-lang-divider" aria-hidden="true">/</span>
+          <button type="button" class="menu-lang-btn is-active" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="menu-overlay__content">
+      <nav class="menu-nav" aria-label="Main navigation">
+        <div class="menu-nav__mask">
+          <a href="projects.html" class="menu-nav__link" data-menu-target="projects">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Projects</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="gaming.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Gaming</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="waifus.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Waifus</span>
+          </a>
+        </div>
+        <div class="menu-nav__mask">
+          <a href="contact.html" class="menu-nav__link">
+            <span class="menu-nav__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path class="arrow-stem" pathLength="1" d="M6 18 L18 6" /><path class="arrow-head" pathLength="1" d="M8 6 H18 V16" /></svg></span>
+            <span class="menu-nav__text">Contact</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="menu-info-grid">
+        <div class="menu-info-block" data-menu-stagger>
+          <div class="menu-info-location">
+            <p class="menu-info-location__line">C.A.B.A.</p>
+            <p class="menu-info-location__line">BUENOS AIRES</p>
+            <p class="menu-info-location__line">ARGENTINA</p>
+          </div>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <ul class="menu-info-socials">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">INSTAGRAM</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">LINKEDIN</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">TWITTER</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="menu-info-link">GITHUB</a></li>
+          </ul>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="mailto:marcelo.orozco.toledo@gmail.com" class="menu-info-link menu-info-link--email">
+            marcelo.orozco.toledo@gmail.com
+          </a>
+        </div>
+        <div class="menu-info-block" data-menu-stagger>
+          <a href="tel:+541131991066" class="menu-info-link menu-info-link--phone">
+            +54 11 3199-1066
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="menu-overlay__footer">
+      <div class="menu-overlay__card" id="menuFeatureCard">
+        <div class="menu-overlay__card-frame">
+          <img src="img/home.jpg" alt="Celonor Featured Work" class="menu-overlay__card-img" />
+        </div>
+      </div>
+      <div class="menu-overlay__giant-mask" aria-hidden="true">
+        <div class="menu-overlay__giant-logo" id="menuGiantLogo">
+          <span class="menu-giant-char">C</span>
+          <span class="menu-giant-char">E</span>
+          <span class="menu-giant-char">L</span>
+          <span class="menu-giant-char">O</span>
+          <span class="menu-giant-char">N</span>
+          <span class="menu-giant-char">O</span>
+          <span class="menu-giant-char">R</span>
+        </div>
+      </div>
+    </footer>
+  </aside>
+
+  <main class="bio-main" id="bioMain">
+    <section class="bio-hero">
+      <div class="bio-hero__top">
+        <div class="bio-hero__meta">
+          <a href="projects.html" class="bio-back-link">
+            <span class="bio-back-link__arrow">←</span>
+            <span>ALL PROJECTS</span>
+          </a>
+          <div class="bio-hero__badges">
+            <span class="bio-badge-cat" id="bioCatLabel">MINISERIES</span>
+            <span class="bio-badge-year" id="bioYear">2022</span>
+            <span class="bio-badge-index" id="bioIndex">#01</span>
+          </div>
+        </div>
+        <div class="bio-hero__title-wrap">
+          <h1 class="bio-hero__title" id="bioTitle">Cyberpunk: Edgerunners</h1>
+        </div>
+      </div>
+      <div class="bio-hero__FullMedia">
+        <div class="bio-hero__img-frame">
+          <img src="" alt="Main visual" class="bio-hero__img" id="bioImg1" />
+        </div>
+      </div>
+    </section>
+
+    <section class="bio-editorial">
+      <div class="bio-editorial__grid">
+        <aside class="bio-credits">
+          <div class="bio-credits__sticky">
+            <span class="bio-section-tag">TECHNICAL SPECS</span>
+            <dl class="bio-credits__list" id="bioCreditsList"></dl>
+          </div>
+        </aside>
+
+        <div class="bio-OriginContent">
+          <div class="bio-text-block">
+            <span class="bio-section-tag">01 / ORIGIN & PRODUCTION</span>
+            <h2 class="bio-text-block__heading">Conceptual genesis and authorial vision</h2>
+            <p class="bio-text-block__paragraph" id="bioOrigenText"></p>
+          </div>
+          <figure class="bio-figure-secondary">
+            <div class="bio-figure-secondary__mask">
+              <img src="" alt="Secondary scene" class="bio-figure-secondary__img" id="bioImg2" />
+            </div>
+            <figcaption class="bio-figure-secondary__caption">
+              <span id="bioCaption2">ARCHIVE VISUAL — 02</span>
+              <span>CELONOR CURATION</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="bio-process">
+      <div class="bio-process__header">
+        <span class="bio-section-tag">02 / CREATIVE PROCESS</span>
+        <h2 class="bio-process__title">Visual, technical and narrative architecture</h2>
+      </div>
+      <div class="bio-process__body">
+        <div class="bio-process__text-wrap">
+          <p class="bio-process__paragraph" id="bioProcesoText"></p>
+        </div>
+        <div class="bio-process__dual-gallery">
+          <figure class="bio-card-visual bio-card-visual--large">
+            <div class="bio-card-visual__frame">
+              <img src="" alt="Visual detail 3" class="bio-card-visual__img" id="bioImg3" />
+            </div>
+            <figcaption class="bio-card-visual__meta">
+              <span>FRAME STUDY 03</span>
+              <span id="bioWorkCode3">MS—01/03</span>
+            </figcaption>
+          </figure>
+          <figure class="bio-card-visual bio-card-visual--offset">
+            <div class="bio-card-visual__frame">
+              <img src="" alt="Visual detail 4" class="bio-card-visual__img" id="bioImg4" />
+            </div>
+            <figcaption class="bio-card-visual__meta">
+              <span>FRAME STUDY 04</span>
+              <span id="bioWorkCode4">MS—01/04</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="bio-showcase" id="bioShowcaseSection">
+      <div class="bio-showcase__pin" id="bioShowcasePin">
+        <div class="bio-showcase__track" id="bioShowcaseTrack">
+          <article class="showcase-panel showcase-panel--hero">
+            <div class="showcase-panel__media">
+              <img src="" alt="Showcase 5" class="showcase-panel__img" id="bioImg5" />
+              <h3 class="showcase-panel__giant-title" id="showcaseTitle1">TITLE</h3>
+            </div>
+          </article>
+          <article class="showcase-panel showcase-panel--card">
+            <div class="showcase-panel__inner">
+              <div class="showcase-panel__thumb">
+                <img src="" alt="View 1" id="showcaseThumb1" />
+              </div>
+              <div class="showcase-panel__label">
+                <span>+ VIEW WORK</span>
+                <span id="showcaseTagCat">CATEGORY</span>
+              </div>
+            </div>
+          </article>
+          <article class="showcase-panel showcase-panel--hero">
+            <div class="showcase-panel__media">
+              <img src="" alt="View 2" class="showcase-panel__img" id="showcaseThumb2" />
+              <h3 class="showcase-panel__giant-title" id="showcaseTitle2">VISUAL DIRECTION</h3>
+            </div>
+          </article>
+          <article class="showcase-panel showcase-panel--card">
+            <div class="showcase-panel__inner">
+              <div class="showcase-panel__thumb">
+                <img src="" alt="View 3" id="showcaseThumb3" />
+              </div>
+              <div class="showcase-panel__label">
+                <span>+ KEY ANIMATION</span>
+                <span id="showcaseYearLabel">YEAR</span>
+              </div>
+            </div>
+          </article>
+          <article class="showcase-panel showcase-panel--hero">
+            <a href="#next" class="showcase-panel__media showcase-panel__next-link" id="nextWorkLink">
+              <img src="" alt="View 4" class="showcase-panel__img" id="showcaseThumb4" />
+              <h3 class="showcase-panel__giant-title" id="showcaseNextTitle">NEXT WORK →</h3>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="scroll-outro" id="scrollOutro">
+    <div class="projects-scroll-bar" id="projectsScrollBar">
+      <span class="projects-scroll-bar__hint">SCROLL DOWN</span>
+      <a href="projects.html" class="projects-scroll-bar__center" id="projectsCenterLink">
+        <span class="projects-scroll-bar__word">Projects</span>
+        <sup class="projects-scroll-bar__count" id="projectsScrollCount">0</sup>
+      </a>
+      <span class="projects-scroll-bar__hint">SCROLL DOWN</span>
+    </div>
+
+    <footer class="footer-inverted" id="bioFooter">
+      <div class="footer-inverted__top">
+        <div class="footer-col">
+          <a href="https://maps.google.com/?q=C.A.B.A.,+Buenos+Aires,+Argentina" target="_blank" rel="noopener noreferrer" class="footer-interactive">
+            <span class="footer-line">CELONOR</span>
+            <span class="footer-line">C.A.B.A.</span>
+            <span class="footer-line">BUENOS AIRES, ARGENTINA</span>
+          </a>
+        </div>
+        <div class="footer-col footer-col--contact">
+          <div class="footer-group">
+            <a href="mailto:marcelo.orozco.toledo@gmail.com" class="footer-interactive">marcelo.orozco.toledo@gmail.com</a>
+          </div>
+          <div class="footer-group footer-group--phone">
+            <a href="tel:+541131991066" class="footer-interactive">+54 11 3199-1066</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <ul class="footer-social-list">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">INSTAGRAM</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">LINKEDIN</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">TWITTER</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-interactive">GITHUB</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col--legal">
+          <a href="#legal-notice" class="footer-interactive">LEGAL NOTICE</a>
+          <span class="footer-copyright">CELONOR © 2026</span>
+        </div>
+      </div>
+      <div class="footer-inverted__divider" role="separator"></div>
+      <div class="footer-inverted__monumental" aria-hidden="true">
+        <div class="footer-inverted__giant-text" id="footerGiantWord">
+          <span>C</span><span>E</span><span>L</span><span>O</span><span>N</span><span>O</span><span>R</span>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script/transitions.js"></script>
+  <script src="script/bio.js"></script>
+  <script src="script/bio-outro.js"></script>
+</body>
+</html>
