@@ -15,7 +15,7 @@
     stagger: 0.05,
     hold: 0.45,
     lift: 1.1,
-    fontWait: 600
+    fontWait: 250
   };
 
   var leaving = false;
@@ -441,6 +441,10 @@
       reveal();
       return;
     }
+
+    // Desactivamos la animación CSS de respaldo ya que GSAP está en control
+    curtain.style.animation = 'none';
+
     var chars = curtain.querySelectorAll('.cx-char');
     gsap.set(curtain, { y: 0, yPercent: 0 });
 
@@ -460,13 +464,16 @@
     if (document.body.getAttribute('data-page') === 'index') return;
     if (document.body.hasAttribute('data-cx-menu')) uiMenu = initMenu();
     var showLogo = initLogo();
+
     var fontReady =
       document.fonts && document.fonts.load
         ? document.fonts.load('700 1em Antonio').catch(function () {})
         : Promise.resolve();
+
     var timeout = new Promise(function (res) {
       setTimeout(res, CFG.fontWait);
     });
+
     Promise.race([fontReady, timeout]).then(function () {
       playArrival(showLogo, uiMenu);
     });
