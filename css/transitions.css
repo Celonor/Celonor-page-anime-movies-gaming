@@ -18,6 +18,17 @@
   justify-content: center;
   pointer-events: all;
   will-change: transform;
+  /* Fallback de seguridad en caso de fallo crítico de GSAP o bloqueo de red */
+  animation: cxArrivalSafetyFallback 0.6s ease-in forwards;
+  animation-delay: 2.2s;
+}
+
+@keyframes cxArrivalSafetyFallback {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 .cx-logo {
@@ -37,6 +48,8 @@
 .cx-char {
   display: inline-block;
   will-change: transform;
+  /* Estado inicial oculto: coincide con el yPercent: 120 de la animación */
+  transform: translateY(120%);
 }
 
 /* 2. TELÓN DE SALIDA (.cx-exit)
